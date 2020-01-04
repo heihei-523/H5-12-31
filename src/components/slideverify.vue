@@ -35,6 +35,7 @@ export default {
   methods: {
     onSuccess () {
       this.$emit('changeShow', this.changeShow)
+      this.$toast('验证码为 123456')
       this.msg = ''
     },
     onFail () {

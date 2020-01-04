@@ -106,9 +106,13 @@ export default {
       if (!this.checked) {
         this.$toast('请勾选协议')
       } else {
-        this.$router.push('/')
+        if (this.user.sms === '123456') {
+          this.$router.push('/')
+        } else {
+          this.$toast('验证码错误')
+        }
       }
-      this.$refs.slideblock.reset()
+      // this.$refs.slideblock.reset()
     },
     // 点击发送验证码按钮
     onTime () {
