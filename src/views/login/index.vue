@@ -29,7 +29,7 @@
             <van-button slot="button" size="small" type="primary">发送验证码</van-button>
           </van-field>
         </van-cell-group>
-        <van-button type="primary" size="large" :disabled="disabled">登录</van-button>
+        <van-button type="primary" size="large" :disabled="disabled" @click="onlogin">登录</van-button>
         <van-checkbox v-model="checked" shape="square">
           <span>同意</span>
           <a href="#">《用户使用协议》</a>
@@ -47,7 +47,7 @@ export default {
         name: '',
         sms: ''
       },
-      disabled: false
+      disabled: true
     }
   },
   methods: {
@@ -56,16 +56,13 @@ export default {
     },
     onblurname () {
       if (/^1[3456789]\d{9}$/.test(this.user.name) && /^\d{6}$/.test(this.user.sms)) {
-        this.disabled = true
+        this.disabled = false
       }
+    },
+    onlogin () {
+      this.$toast('请勾选协议')
+      this.$router.push('/')
     }
-    // onblursms () {
-    //   if (!/^\d{6}$/.test(this.user.sms)) {
-    //
-    //   }else {
-
-    //   }
-    // }
   }
 }
 </script>
