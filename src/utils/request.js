@@ -5,7 +5,7 @@ import axios from 'axios'
 
 // axios.create 方法：复制一个 axios
 const request = axios.create({
-  baseURL: 'http://ttapi.research.itcast.cn/' // 基础路径
+  // baseURL: '' // 基础路径
 })
 
 // 请求拦截器
@@ -33,5 +33,9 @@ request.interceptors.response.use(
     return Promise.reject(error)
   }
 )
-
+// export default { // 暴露request_mock方法，即后面页面中用到的方法
+//   request_mock (url, params) {
+//     return fetch(url, params)
+//   }
+// }
 export default request
