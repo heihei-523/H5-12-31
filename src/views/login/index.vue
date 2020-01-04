@@ -23,10 +23,20 @@
             center
             clearable
             placeholder="请输入验证码"
-            @blur="onblurname"
+            @blur="onblursms"
           >
             <img src="../../assets/icon_auth_code_24.png" alt="" slot="left-icon">
-            <van-button slot="button" size="small" type="primary">发送验证码</van-button>
+            <van-button slot="button" size="small" type="primary" @click="onTime">
+              <span v-if="timeBnt">发送验证码</span>
+              <div v-else>
+                <van-count-down
+                  :time="60000"
+                  format="ss"
+                  @finish="onfinish"
+                  ref="countDown"
+                />后重发
+              </div>
+            </van-button>
           </van-field>
         </van-cell-group>
         <van-button type="primary" size="large" :disabled="disabled" @click="onlogin">登录</van-button>
@@ -34,12 +44,19 @@
           <span>同意</span>
           <a href="#">《用户使用协议》</a>
         </van-checkbox>
+        <SlideVerify></SlideVerify>
+        <!-- <drag-a></drag-a> -->
   </div>
 </template>
 
 <script>
+import SlideVerify from '../../components/slideverify'
+// import dragA from '../../components/drag'
 export default {
   name: 'Login',
+  components: {
+    SlideVerify
+  },
   data () {
     return {
       checked: false,
@@ -47,7 +64,8 @@ export default {
         name: '',
         sms: ''
       },
-      disabled: true
+      disabled: true,
+      timeBnt: true
     }
   },
   methods: {
@@ -55,13 +73,35 @@ export default {
       this.$router.push('/')
     },
     onblurname () {
+      if (!/^1[3456789]\d{9}$/.test(this.user.name)) {
+        this.$toast('请输入正确的手机号')
+        if (/^1[3456789]\d{9}$/.test(this.user.name) && /^\d{6}$/.test(this.user.sms)) {
+          this.disabled = false
+        }
+      }
+    },
+    onblursms () {
+      if (!/^\d{6}$/.test(this.user.sms)) {
+        this.$toast('请输入正确的验证码')
+      }
       if (/^1[3456789]\d{9}$/.test(this.user.name) && /^\d{6}$/.test(this.user.sms)) {
         this.disabled = false
       }
     },
     onlogin () {
-      // this.$toast('请勾选协议')
-      this.$router.push('/')
+      if (!this.checked) {
+        this.$toast('请勾选协议')
+      } else {
+        this.$router.push('/')
+      }
+      this.$refs.slideblock.reset()
+    },
+    onTime () {
+      this.timeBnt = false
+      this.$refs.countDown.reset()
+    },
+    onfinish () {
+      this.timeBnt = true
     }
   }
 }
@@ -132,6 +172,11 @@ export default {
         color: #1890FF;
       }
     }
+  }
+  .van-count-down {
+    display: inline-block;
+    font-size: 16px;
+    color: #8A8C99;
   }
 
 </style>

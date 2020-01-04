@@ -6,12 +6,16 @@ import store from './store' // vuex
 import './utils/register-vant.js'// vant
 import 'amfe-flexible' // 适应屏幕
 import Mock from '@/mock' // 模拟数据
+import SlideVerify from 'vue-monoplasty-slide-verify'
+// import 'vue-drag-drop'
 Vue.config.productionTip = false
-Vue.prototype.$axios = axios
+Vue.use(SlideVerify)
+// Vue.prototype.$axios = axios
 new Vue({
   router,
   store,
   Mock,
   axios,
+  SlideVerify,
   render: h => h(App)
 }).$mount('#app')
