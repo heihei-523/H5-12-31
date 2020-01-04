@@ -19,10 +19,12 @@
 
 <script>
 export default {
+  name: 'Slideverify',
   data () {
     return {
       msg: '',
-      text: '向右滑'
+      text: '',
+      changeShow: false
     }
   },
   computed: {
@@ -32,7 +34,8 @@ export default {
   },
   methods: {
     onSuccess () {
-      this.msg = 'login success'
+      this.$emit('changeShow', this.changeShow)
+      this.msg = ''
     },
     onFail () {
       this.msg = ''

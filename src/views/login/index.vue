@@ -14,6 +14,7 @@
           clearable
           placeholder="请输入手机号"
           maxlength="11"
+          @input="onInputName"
           @blur="onblurname"
         >
           <img src="../../assets/icon_phone_number_24.png" alt="" slot="left-icon">
@@ -26,12 +27,12 @@
             @blur="onblursms"
           >
             <img src="../../assets/icon_auth_code_24.png" alt="" slot="left-icon">
-            <van-button slot="button" size="small" type="primary" @click="onTime">
+            <van-button slot="button" size="small" type="primary" @click="onTime" :disabled="disableBtn">
               <span v-if="timeBnt">发送验证码</span>
-              <div v-else>
+              <div>
                 <van-count-down
-                  :time="60000"
-                  format="ss"
+                  :time="time"
+                  :format="format"
                   @finish="onfinish"
                   ref="countDown"
                 />后重发
@@ -44,14 +45,15 @@
           <span>同意</span>
           <a href="#">《用户使用协议》</a>
         </van-checkbox>
-        <SlideVerify></SlideVerify>
-        <!-- <drag-a></drag-a> -->
+        <van-popup v-model="show" get-container="body">
+          <SlideVerify :message="show" @changeShow="onchangeShow"></SlideVerify>
+        </van-popup>
+
   </div>
 </template>
 
 <script>
 import SlideVerify from '../../components/slideverify'
-// import dragA from '../../components/drag'
 export default {
   name: 'Login',
   components: {
@@ -59,21 +61,33 @@ export default {
   },
   data () {
     return {
-      checked: false,
+      format: 'ss',
+      time: 60000,
+      show: false, // 弹层显示
+      checked: false, // 复选框
       user: {
         name: '',
         sms: ''
       },
-      disabled: true,
-      timeBnt: true
+      disabled: true, // 登录按钮禁用
+      timeBnt: true, // 显示发送验证码按钮按钮
+      disableBtn: true// 发送验证码时按钮禁用
     }
   },
   methods: {
     onClickLeft () {
       this.$router.push('/')
     },
+    onInputName () {
+      if (/^1[3456789]\d{9}$/.test(this.user.name)) {
+        this.disableBtn = false
+      } else {
+        this.disableBtn = true
+      }
+    },
     onblurname () {
       if (!/^1[3456789]\d{9}$/.test(this.user.name)) {
+        this.disableBtn = true
         this.$toast('请输入正确的手机号')
         if (/^1[3456789]\d{9}$/.test(this.user.name) && /^\d{6}$/.test(this.user.sms)) {
           this.disabled = false
@@ -96,12 +110,23 @@ export default {
       }
       this.$refs.slideblock.reset()
     },
+    // 点击发送验证码按钮
     onTime () {
-      this.timeBnt = false
-      this.$refs.countDown.reset()
+      if (/^1[3456789]\d{9}$/.test(this.user.name)) {
+        this.disableBtn = false
+      }
+      this.show = true
     },
     onfinish () {
       this.timeBnt = true
+      this.disableBtn = false
+    },
+    // 关闭弹层时
+    onchangeShow (changeShow) {
+      this.show = changeShow
+      this.timeBnt = false
+      this.$refs.countDown.reset()
+      this.disableBtn = true
     }
   }
 }
@@ -177,6 +202,23 @@ export default {
     display: inline-block;
     font-size: 16px;
     color: #8A8C99;
+  }
+  .van-popup {
+    border-radius: 10px;
+    padding: 10px;
+  }
+  /deep/canvas {
+    border-radius: 10px;
+  }
+  /deep/.slide-verify .slide-verify-slider {
+    border-radius: 10px;
+    margin: 0;
+  }
+  /deep/.slide-verify-slider-mask {
+    border-radius: 10px 0 0 10px
+  }
+  /deep/.slide-verify-slider-mask .slide-verify-slider-mask-item {
+    border-radius: 50%
   }
 
 </style>

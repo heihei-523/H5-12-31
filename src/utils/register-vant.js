@@ -17,7 +17,8 @@ import {
   Checkbox,
   CheckboxGroup,
   Toast,
-  CountDown
+  CountDown,
+  Popup
 } from 'vant'
 
 Vue
@@ -39,3 +40,4 @@ Vue
   .use(CheckboxGroup)
   .use(Toast)
   .use(CountDown)
+  .use(Popup)
