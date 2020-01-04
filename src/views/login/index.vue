@@ -60,7 +60,7 @@ export default {
       }
     },
     onlogin () {
-      this.$toast('请勾选协议')
+      // this.$toast('请勾选协议')
       this.$router.push('/')
     }
   }
