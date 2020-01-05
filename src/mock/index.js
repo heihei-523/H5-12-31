@@ -136,5 +136,89 @@ const mockData = {
     }
   ]
 }
+// 3.场馆详情和门票详情
+const VenueDetails = {
+  'venueId': 301024,
+  'venueName': '【帮你订】测试场馆勿定下错单不退',
+  'remainder': '',
+  'signImg': 'https://img.dongsport.com/img/56/90/e65889be-b736-495a-bc12-2d1ffa70cffe.jpg',
+  'open': '9:00',
+  'close': '22:00',
+  'address': '北京',
+  'phone': '4006625170',
+  'lat': 39.983322,
+  'lon': 116.412371,
+  'content': '',
+  'facilities': [
+    {
+      'id': 1,
+      'name': 'WIFI',
+      'icon': 'wifi'
+    },
+    {
+      'id': 2,
+      'name': '停车场',
+      'icon': 'tingchechang'
+    },
+    {
+      'id': 3,
+      'name': '休息区',
+      'icon': 'xiuxiqu'
+    },
+    {
+      'id': 5,
+      'name': '热水淋浴',
+      'icon': 'reshuilinyu'
+    },
+    {
+      'id': 6,
+      'name': '装备租赁',
+      'icon': 'zhuangbeizulin'
+    },
+    {
+      'id': 7,
+      'name': '食品饮料',
+      'icon': 'shipinyinliao'
+    },
+    {
+      'id': 8,
+      'name': '更衣室',
+      'icon': 'gengyishi'
+    }
+  ],
+  'sites': [ // 运动类型
+    {
+      'sportTypeName': '篮球',
+      'siteId': 304484
+    },
+    {
+      'sportTypeName': '羽毛球',
+      'siteId': 304483
+    },
+    {
+      'sportTypeName': '羽毛球',
+      'siteId': 304665
+    },
+    {
+      'sportTypeName': '篮球',
+      'siteId': 304664
+    }
+  ],
+  'tickets': [
+    {
+      'ticketId': 123,
+      'ticketName': '篮球',
+      'ticketPrice': 100,
+      'orderNum': 304664
+    },
+    {
+      'ticketId': 124,
+      'ticketName': '篮球',
+      'ticketPrice': 100,
+      'orderNum': 304664
+    }
+  ]
+}
 
 Mock.mock('/news/index', 'get', mockData)
+Mock.mock('/news/VenueDetails', 'get', VenueDetails)

@@ -137,28 +137,6 @@ export default {
 </script>
 
 <style scoped lang="less">
-  // body {
-  //   font-family: "SimHei";
-  // }
-  .van-ellipsis {
-    font-size: 16px;
-    font-weight: 600;
-    // font-family: "SimHei";
-  }
-  .logo {
-    margin: 30px 151px 0 151px;
-    width: 70px;
-  }
-  .van-nav-bar__left .van-icon-cross {
-    font-size: 20px;
-    font-weight: 600;
-    color: #5c5d66;
-  }
-  .van-nav-bar__right .van-icon-ellipsis {
-    font-size: 20px;
-    font-weight: 600;
-    color: #5c5d66;
-  }
   .van-hairline--top-bottom {
     margin-top: 60px;
   }

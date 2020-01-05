@@ -18,7 +18,11 @@ import {
   CheckboxGroup,
   Toast,
   CountDown,
-  Popup
+  Popup,
+  Collapse,
+  CollapseItem,
+  Calendar,
+  SwipeCell
 } from 'vant'
 
 Vue
@@ -41,3 +45,7 @@ Vue
   .use(Toast)
   .use(CountDown)
   .use(Popup)
+  .use(Collapse)
+  .use(CollapseItem)
+  .use(Calendar)
+  .use(SwipeCell)
