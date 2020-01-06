@@ -6,7 +6,7 @@
         <van-icon name="ellipsis" slot="right" />
       </van-nav-bar>
       <div>
-        <div>
+        <div class="beiJingf">
             <span>
                 <img src="../../assets/icon_location.png" alt="">
             </span>
@@ -16,10 +16,10 @@
             </span>
         </div>
         <div>
-            <img :src="signImg" alt="">
+            <img :src="signImg" alt="" class="t2">
         </div>
       </div>
-      <img :src="signImg" alt />
+      <img :src="signImg" class="tuo">
       <div class="guanming">
         <h5>{{venueName}}</h5>
         <span>
@@ -229,9 +229,22 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.beiJing {
+.t2 {
+    width:375px;
+    height:161px;
+}
+.tuo {
+    border-radius: 3%;
+    margin: 0 10px;
+    width:351px;
+    height:151px;
+}
+.beiJingf {
+    padding-left: 10px;
+    .beiJing {
     font-size: 14px;
     vertical-align: middle;
+    }
 }
 
 /deep/.date {
