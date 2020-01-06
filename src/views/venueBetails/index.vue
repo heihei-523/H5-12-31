@@ -5,6 +5,20 @@
         <van-icon name="cross" slot="left" />
         <van-icon name="ellipsis" slot="right" />
       </van-nav-bar>
+      <div>
+        <div>
+            <span>
+                <img src="../../assets/icon_location.png" alt="">
+            </span>
+            <span class="beiJing">{{address}}</span>
+            <span>
+                <img src="../../assets/icon_dropdown.png" alt="">
+            </span>
+        </div>
+        <div>
+            <img :src="signImg" alt="">
+        </div>
+      </div>
       <img :src="signImg" alt />
       <div class="guanming">
         <h5>{{venueName}}</h5>
@@ -173,7 +187,8 @@ export default {
       close: '',
       open: '',
       sites: [],
-      tickets: []
+      tickets: [],
+      address: ''
     }
   },
   created () {
@@ -207,12 +222,17 @@ export default {
       this.close = res.data.close
       this.sites = res.data.sites
       this.tickets = res.data.tickets
+      this.address = res.data.address
     }
   }
 }
 </script>
 
 <style lang="less" scoped>
+.beiJing {
+    font-size: 14px;
+    vertical-align: middle;
+}
 
 /deep/.date {
     .van-tabs__nav--line {
