@@ -1,26 +1,12 @@
 <template>
   <div>
-      <!-- 单馆的首页 -->
+      <!-- 多场馆详情页 -->
     <div>
       <van-nav-bar :title="venueName" @click-left="onClickLeft">
         <van-icon name="cross" slot="left" />
         <van-icon name="ellipsis" slot="right" />
       </van-nav-bar>
-      <div>
-        <div class="beiJingf">
-            <span>
-                <img src="../../assets/icon_location.png" alt="">
-            </span>
-            <span class="beiJing">{{address}}</span>
-            <span>
-                <img src="../../assets/icon_dropdown.png" alt="">
-            </span>
-        </div>
-        <div>
-            <img :src="signImg" alt="" class="t2">
-        </div>
-      </div>
-      <img :src="signImg" class="tuo">
+      <img :src="signImg" class="t2">
       <div class="guanming">
         <h5>{{venueName}}</h5>
         <span>
@@ -234,16 +220,15 @@ export default {
     width:375px;
     height:161px;
 }
-.tuo {
-    border-radius: 3%;
-    margin: 0 10px;
-    width:351px;
-    height:151px;
-}
+// .tuo {
+//     border-radius: 3%;
+//     margin: 0 10px;
+//     width:351px;
+//     height:151px;
+// }
 .beiJingf {
     padding-left: 10px;
     .beiJing {
-    color: #8A8C99;
     font-size: 14px;
     vertical-align: middle;
     }

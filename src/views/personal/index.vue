@@ -1,4 +1,5 @@
 <template>
+<!-- 个人中心 -->
   <div class="app">
       <van-nav-bar title="个人中心" @click-left="onClickLeft">
         <van-icon name="cross" slot="left" />
