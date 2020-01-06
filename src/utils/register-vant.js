@@ -22,7 +22,9 @@ import {
   Collapse,
   CollapseItem,
   Calendar,
-  SwipeCell
+  SwipeCell,
+  Card,
+  Skeleton
 } from 'vant'
 
 Vue
@@ -49,3 +51,5 @@ Vue
   .use(CollapseItem)
   .use(Calendar)
   .use(SwipeCell)
+  .use(Card)
+  .use(Skeleton)

@@ -6,6 +6,7 @@ import Badminton from '../views/tabbar/badminton'
 import Basketball from '../views/tabbar/basketball'
 import Swim from '../views/tabbar/swim'
 import VenueBetails from '../views/venueBetails'
+import Component from '../views/personal'
 Vue.use(VueRouter)
 
 const routes = [
@@ -35,6 +36,10 @@ const routes = [
   {
     path: '/venueBetails',
     component: VenueBetails
+  },
+  {
+    path: '/personal',
+    component: Component
   }
 ]
 const router = new VueRouter({
