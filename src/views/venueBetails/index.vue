@@ -39,7 +39,7 @@
         </van-tabs>
         <div class="bottom">
             <img src="../../assets/icon_yuding.png" alt="" >
-            <p>场地预定</p>
+            <p class="right">场地预定</p>
             <span :value="date" @click="show = true">更多日期</span>
             <!-- <van-cell title="更多日期" :value="date" @click="show = true" /> -->
             <van-calendar v-model="show" @confirm="onConfirm"/>
@@ -65,12 +65,16 @@
     <div class="reserve">
         <div class="bottom">
             <img src="../../assets/icon_menpiao.png" alt="" >
-            <p class="menpiao">门票</p>
+            <p class="menpiao right">门票</p>
             <span>查看更多</span>
             <img src="../../assets/icon_arrow.png" alt="" class="icon_arrow">
         </div>
         <van-cell-group>
-            <van-cell :title="ticket.ticketName" value="" :label="ticket.ticketPrice" v-for="ticket in tickets" :key="ticket.ticketId">
+            <van-cell :title="ticket.ticketName"
+                value="" :label="'￥' + ticket.ticketPrice"
+                v-for="ticket in tickets"
+                :key="ticket.ticketId"
+            >
                 <span slot="icon" class="span"><s>￥120.00</s></span>
                 <van-button round type="info" size="small" plain color="#1890FF" slot="right-icon">购买单人票</van-button>
             </van-cell>
@@ -84,7 +88,7 @@
     <div class="reserve reserves">
         <div class="bottom">
             <img src="../../assets/icon_card.png" alt="" >
-            <p class="menpiao">在线购买会员</p>
+            <p class="menpiao right">在线购买会员</p>
             <span class="examine">查看更多</span>
             <img src="../../assets/icon_arrow.png" alt="" class="icon_arrow">
         </div>
@@ -226,6 +230,9 @@ export default {
         width: 350px;
     }
 }
+.p {
+        margin-left: 10px;
+    }
 .working {
     display: flex;
     font-size: 13px;
@@ -286,24 +293,19 @@ p {
     .bottom {
         display: flex;
         padding: 15px 0 15px 0;
-        .p {
-        width: 80px;
-        font-size: 16px;
-        vertical-align: top;
-        padding-left: 15px;
-        padding-top: 2px;
-        // margin-left: 10px;
-        }
         span {
             // vertical-align: top;
             padding-top: 4px;
             display: inline-block;
-            margin: 0 0 0 170px;
+            // margin: 0 0 0 170px;
             font-size: 13px;
             color: #8A8C99;
         }
         .icon_arrow {
             padding-top: 3px;
+        }
+        .right {
+            width: 250px;
         }
     }
 
@@ -344,9 +346,7 @@ p {
     padding: 0;
 }
 .menpiao {
-    margin-right: 50px;
-    // width: 200px;
-    // vertical-align:middle;
+    width: 200px;
 }
 .reserve {
     /deep/.van-cell--clickable:active {
@@ -374,7 +374,6 @@ p {
 }
 .reserve {
         .membership {
-        // display: inline-block;
         float: left;
         margin-right: 10px;
         }
@@ -409,11 +408,6 @@ p {
                 left: 200px;
             }
         }
-    .bottom {
-        .examine {
-        margin: 0 0 0 100px;
-       }
-    }
     .TimeCards {
         position: relative;
         .TimeCard {
