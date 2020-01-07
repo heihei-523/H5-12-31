@@ -20,7 +20,8 @@
         <Slideshow></Slideshow>
       </div>
       <!-- tabl栏 -->
-      <HomeTabs></HomeTabs>
+      <HomeTabs  @onAll="onAll" @ball="onball"></HomeTabs>
+      <All v-if="show"></All>
       <router-view></router-view>
   </div>
 </template>
@@ -29,17 +30,21 @@
 import { one } from '@/api/mock'
 import Slideshow from '../../components/slideshow' // 轮播图
 import HomeTabs from '../../components/HomeTabs' // tabl栏
+import All from '../../components/All'
 export default {
   components: {
+    All,
     Slideshow,
     HomeTabs
   },
+  name: 'home',
   data () {
     return {
       // active: 0,
       // barBackground: false,
       venueInfo: {}, // 场地信息
-      sportName: [] // 运动名称
+      sportName: [], // 运动名称
+      show: false
     }
   },
   created () {
@@ -51,6 +56,12 @@ export default {
       //   console.log(res)
       this.venueInfo = res.data.venueInfo
       this.sportName = this.venueInfo.sportName.split(',')
+    },
+    onAll (show) {
+      this.show = show
+    },
+    onball (hide) {
+      this.show = hide
     },
     onClickLeft () {
 

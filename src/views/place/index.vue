@@ -7,7 +7,9 @@
     </van-nav-bar>
     <!-- 星期栏 -->
     <van-tabs v-model="active" title-active-color="#1890FF" :swipe-threshold="7">
-        <van-tab title="今天"></van-tab>
+        <van-tab title="今天">
+          <div title></div>
+        </van-tab>
         <van-tab title="周二"></van-tab>
         <van-tab title="周三"></van-tab>
         <van-tab title="周四"></van-tab>

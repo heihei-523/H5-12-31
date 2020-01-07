@@ -8,7 +8,7 @@ import Home from '../views/home'
 import AllMovement from '../components/AllMovement.vue'
 import Place from '../views/place'
 import Userrecharge from '../views/user/userrecharge'
-import AllMovement02 from '../components/AllMovement02.vue'
+import Invoice from '../views/invoice'
 
 Vue.use(VueRouter)
 
@@ -19,16 +19,12 @@ const routes = [
     component: Login
   },
   {
-    path: '/home', // 首页
+    path: '/', // 首页
     component: Home,
     children: [
       {
-        path: '/home/allMovement',
+        path: '',
         component: AllMovement
-      },
-      {
-        path: '/home/allMovement02',
-        component: AllMovement02
       }
     ]
   },
@@ -51,6 +47,10 @@ const routes = [
   {
     path: '/user/userrecharge', // 会员卡充值
     component: Userrecharge
+  },
+  {
+    path: '/invoice',
+    component: Invoice
   }
 ]
 const router = new VueRouter({

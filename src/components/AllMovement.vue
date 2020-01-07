@@ -1,27 +1,5 @@
 <template>
   <div>
-    <div class="movement">
-      <div>
-        <img src="../assets/羽毛球.png" alt />
-        <span>羽毛球</span>
-      </div>
-      <div>
-        <img src="../assets/篮球.png" alt />
-        <span>篮球</span>
-      </div>
-      <div>
-        <img src="../assets/游泳.png" alt />
-        <span>游泳</span>
-      </div>
-      <div>
-        <img src="../assets/网球.png" alt />
-        <span>网球</span>
-      </div>
-      <div>
-        <img src="../assets/乒乓球.png" alt />
-        <span>乒乓球</span>
-      </div>
-    </div>
     <div class="goupiao">
       <div class="picture">
         <img src="../assets/banner.png" alt />
@@ -83,7 +61,17 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data () {
+    return {
+    }
+  },
+  created () {
+  },
+  methods: {
+  }
+
+}
 </script>
 
 <style lang="less" scoped>

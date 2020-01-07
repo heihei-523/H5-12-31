@@ -24,7 +24,12 @@ import {
   Calendar,
   SwipeCell,
   Card,
-  Skeleton
+  Skeleton,
+  AddressEdit,
+  Area,
+  Panel,
+  RadioGroup,
+  Radio
 } from 'vant'
 
 Vue
@@ -53,3 +58,8 @@ Vue
   .use(SwipeCell)
   .use(Card)
   .use(Skeleton)
+  .use(AddressEdit)
+  .use(Area)
+  .use(Panel)
+  .use(Radio)
+  .use(RadioGroup)

@@ -393,7 +393,7 @@ export default {
 .tuo {
   border-radius: 3%;
   margin: 0 10px;
-  width: 351px;
+  width: 350px;
   height: 151px;
 }
 .beiJingf {
@@ -584,7 +584,7 @@ p {
   }
   .neiRong {
     padding-left: 10px;
-    width: 351px;
+    width: 350px;
     height: 60px;
     font-size: 14px;
     font-family: PingFangSC-Regular, PingFang SC;
