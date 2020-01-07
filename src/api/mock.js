@@ -13,3 +13,10 @@ export function venueBetails () {
     url: '/news/VenueDetails'
   })
 }
+// 场地块
+export function GroundBlock () {
+  return request({
+    method: 'GET',
+    url: '/news/GroundBlock'
+  })
+}

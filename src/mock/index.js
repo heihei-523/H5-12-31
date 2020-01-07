@@ -219,6 +219,143 @@ const VenueDetails = {
     }
   ]
 }
+// 场地块数据
+const GroundBlock = {
+  'num': 20,
+  'siteId': 304701,
+  'siteName': '篮球',
+  'orderType': 0,
+  'orderTime': 1,
+  'openTime': '09:00',
+  'closeTime': '22:00',
+  'itemList': [
+    {
+      'itemId': 100000005,
+      'itemName': '1',
+      'stockList': [
+        {
+          'startTime': '09:00',
+          'endTime': '10:00',
+          'itemType': 0,
+          'groupType': 0,
+          'marketPrice': 20,
+          'salePrice': 20,
+          'isLock': 0
+        },
+        {
+          'startTime': '10:00',
+          'endTime': '11:00',
+          'itemType': 0,
+          'groupType': 0,
+          'marketPrice': 20,
+          'salePrice': 20,
+          'isLock': 0
+        },
+        {
+          'startTime': '11:00',
+          'endTime': '12:00',
+          'itemType': 0,
+          'groupType': 0,
+          'marketPrice': 20,
+          'salePrice': 20,
+          'isLock': 0
+        },
+        {
+          'startTime': '12:00',
+          'endTime': '13:00',
+          'itemType': 0,
+          'groupType': 0,
+          'marketPrice': 20,
+          'salePrice': 20,
+          'isLock': 0
+        },
+        {
+          'startTime': '13:00',
+          'endTime': '14:00',
+          'itemType': 0,
+          'groupType': 0,
+          'marketPrice': 20,
+          'salePrice': 20,
+          'isLock': 0
+        },
+        {
+          'startTime': '14:00',
+          'endTime': '15:00',
+          'itemType': 0,
+          'groupType': 0,
+          'marketPrice': 20,
+          'salePrice': 20,
+          'isLock': 0
+        },
+        {
+          'startTime': '15:00',
+          'endTime': '16:00',
+          'itemType': 0,
+          'groupType': 0,
+          'marketPrice': 20,
+          'salePrice': 20,
+          'isLock': 0
+        },
+        {
+          'startTime': '16:00',
+          'endTime': '17:00',
+          'itemType': 0,
+          'groupType': 0,
+          'marketPrice': 20,
+          'salePrice': 20,
+          'isLock': 0
+        },
+        {
+          'startTime': '17:00',
+          'endTime': '18:00',
+          'itemType': 0,
+          'groupType': 0,
+          'marketPrice': 20,
+          'salePrice': 20,
+          'isLock': 0
+        },
+        {
+          'startTime': '18:00',
+          'endTime': '19:00',
+          'itemType': 0,
+          'groupType': 0,
+          'marketPrice': 20,
+          'salePrice': 20,
+          'isLock': 0
+        },
+        {
+          'startTime': '19:00',
+          'endTime': '20:00',
+          'itemType': 0,
+          'groupType': 0,
+          'marketPrice': 20,
+          'salePrice': 20,
+          'isLock': 0
+        },
+        {
+          'startTime': '20:00',
+          'endTime': '21:00',
+          'itemType': 0,
+          'groupType': 0,
+          'marketPrice': 20,
+          'salePrice': 20,
+          'isLock': 0
+        },
+        {
+          'startTime': '21:00',
+          'endTime': '22:00',
+          'itemType': 0,
+          'groupType': 0,
+          'marketPrice': 20,
+          'salePrice': 20,
+          'isLock': 0
+        }
+
+      ]
+    }
+  ]
+}
 
 Mock.mock('/news/index', 'get', mockData)
 Mock.mock('/news/VenueDetails', 'get', VenueDetails)
+Mock.mock('/news/GroundBlock', 'get', GroundBlock)

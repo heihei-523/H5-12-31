@@ -1,17 +1,15 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '../views/login/index.vue'
-import Tabbar from '../views/tabbar'
-import Badminton from '../views/tabbar/badminton'
-import Basketball from '../views/tabbar/basketball'
-import Swim from '../views/tabbar/swim'
 import VenueBetails from '../views/venueBetails'
 import Personal from '../views/personal'
 import ManyVenues from '../views/ManyVenues'
-import VenueList from '../views/VenueList'
+import Home from '../views/home'
 import AllMovement from '../components/AllMovement.vue'
 import Place from '../views/place'
 import Userrecharge from '../views/user/userrecharge'
+import AllMovement02 from '../components/AllMovement02.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -21,30 +19,16 @@ const routes = [
     component: Login
   },
   {
-    path: '',
-    component: Tabbar,
+    path: '/home', // 首页
+    component: Home,
     children: [
       {
-        path: '/',
-        component: Badminton
-      },
-      {
-        path: '/basketball',
-        component: Basketball
-      },
-      {
-        path: '/swim',
-        component: Swim
-      }
-    ]
-  },
-  {
-    path: '/venueList',
-    component: VenueList,
-    children: [
-      {
-        path: '/venueList/allMovement',
+        path: '/home/allMovement',
         component: AllMovement
+      },
+      {
+        path: '/home/allMovement02',
+        component: AllMovement02
       }
     ]
   },

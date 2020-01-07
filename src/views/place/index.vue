@@ -53,8 +53,9 @@
 
 <script>
 // import tableA from '@/components/table'
-import { place } from '@/api/mock'
+import { GroundBlock } from '../../api/mock'
 export default {
+  name: 'place',
   // components: {
   //   tableA
   // },
@@ -75,7 +76,7 @@ export default {
       // navbar 菜单
     },
     async onload () {
-      const res = await place()
+      const res = await GroundBlock()
       console.log(res)
       this.placeList = res.data.itemList
     }
