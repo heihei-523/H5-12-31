@@ -8,9 +8,12 @@ import Home from '../views/home'
 import AllMovement from '../components/AllMovement.vue'
 // import Place from '../views/place'
 import Userrecharge from '../views/user/userrecharge'
-import Invoice from '../views/invoice/apply-invoice.vue' // 申请发票
+import InvoiceFrom from '../views/invoice/invoiceFrom.vue' // 申请发票的表单
+import ApplyInvoice from '../views/invoice/apply-invoice.vue' //
 import VenueBooking from '../views/VenueList/VenueBooking' // 场地预定单
 import BuyTicket from '../views/VenueList/BuyTicket' // 购买门票
+import MembershipDetails from '../views/user/MembershipcardDetails' // 会员卡详情
+import InvoiceDetails from '../views/invoice/invoiceDetails.vue' // 发票详情
 
 Vue.use(VueRouter)
 
@@ -51,8 +54,12 @@ const routes = [
     component: Userrecharge
   },
   {
-    path: '/apply-invoice',
-    component: Invoice // 申请发票
+    path: '/applyInvoiceFrom',
+    component: InvoiceFrom // 申请发票表单
+  },
+  {
+    path: '/ApplyInvoice',
+    component: ApplyInvoice
   },
   {
     path: '/venueBooking', // 场地预定单
@@ -61,6 +68,14 @@ const routes = [
   {
     path: '/buyTicket', // 购买门票
     component: BuyTicket
+  },
+  {
+    path: '/membershipDetails', // 会员卡详情
+    component: MembershipDetails
+  },
+  {
+    path: '/invoiceDetails', // 发票详情
+    component: InvoiceDetails
   }
 ]
 const router = new VueRouter({
