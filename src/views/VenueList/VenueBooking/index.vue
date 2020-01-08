@@ -2,7 +2,7 @@
   <div>
     <!-- 场地预定 -->
     <div>
-      <van-nav-bar title="购买门票">
+      <van-nav-bar title="场地预定">
         <van-icon name="cross"
                   slot="left" />
         <van-icon name="ellipsis"

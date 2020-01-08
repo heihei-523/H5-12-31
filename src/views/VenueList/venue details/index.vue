@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- 单馆的首页 -->
+    <!-- 场馆详情页 -->
     <div>
       <van-nav-bar :title="venueName" @click-left="onClickLeft">
         <van-icon name="cross" slot="left" />
@@ -9,11 +9,11 @@
       <div>
         <div class="beiJingf">
           <span>
-            <img src="../../assets/icon_location.png" alt />
+            <img src="../../../assets/icon_location.png" alt />
           </span>
           <span class="beiJing">{{address}}</span>
           <span>
-            <img src="../../assets/icon_dropdown.png" alt />
+            <img src="../../../assets/icon_dropdown.png" alt />
           </span>
         </div>
       </div>
@@ -21,11 +21,11 @@
       <div class="guanming">
         <h5>{{venueName}}</h5>
         <span>
-          <img src="../../assets/icon_iphone.png" alt />
+          <img src="../../../assets/icon_iphone.png" alt />
         </span>
       </div>
       <div class="working">
-        <img src="../../assets/ic_list_time.png" alt />
+        <img src="../../../assets/ic_list_time.png" alt />
         <span>{{"工作日" + open + "-" + close}}</span>
         <span>{{"工作日" + open + "-" + close}}</span>
       </div>
@@ -51,12 +51,12 @@
         <van-tab :title="item.sportTypeName" v-for="(item,index) in sites" :key="index"></van-tab>
       </van-tabs>
       <div class="bottom">
-        <img src="../../assets/icon_yuding.png" alt />
+        <img src="../../../assets/icon_yuding.png" alt />
         <p class="right">场地预定</p>
         <span :value="date" @click="show = true">更多日期</span>
         <!-- <van-cell title="更多日期" :value="date" @click="show = true" /> -->
         <van-calendar v-model="show" @confirm="onConfirm" />
-        <img src="../../assets/icon_arrow.png" alt class="icon_arrow" />
+        <img src="../../../assets/icon_arrow.png" alt class="icon_arrow" />
       </div>
       <div class="date">
         <van-tabs :line-height="0" :swipe-threshold="3">
@@ -75,10 +75,10 @@
     <div class="emptybox"></div>
     <div class="reserve">
       <div class="bottom">
-        <img src="../../assets/icon_menpiao.png" alt />
+        <img src="../../../assets/icon_menpiao.png" alt />
         <p class="menpiao right">门票</p>
         <span>查看更多</span>
-        <img src="../../assets/icon_arrow.png" alt class="icon_arrow" />
+        <img src="../../../assets/icon_arrow.png" alt class="icon_arrow" />
       </div>
       <van-cell-group>
         <van-cell
@@ -102,16 +102,16 @@
     <div class="emptybox"></div>
     <div class="reserve reserves">
       <div class="bottom">
-        <img src="../../assets/icon_card.png" alt />
+        <img src="../../../assets/icon_card.png" alt />
         <p class="menpiao right">在线购买会员</p>
         <span class="examine">查看更多</span>
-        <img src="../../assets/icon_arrow.png" alt class="icon_arrow" />
+        <img src="../../../assets/icon_arrow.png" alt class="icon_arrow" />
       </div>
     </div>
     <!-- ---------------------------会员次卡---------------------------------------- -->
     <div class="member">
         <div class="member_1">
-            <img src="../../assets/次卡备份.png" alt="">
+            <img src="../../../assets/CiKa.png" alt="">
         </div>
         <div class="member_right">
             <p>会员次卡</p>
@@ -125,7 +125,7 @@
     <!-- --------------------会员期限卡-------------------------------- -->
     <div class="member1">
         <div class="member_1">
-            <img src="../../assets/期限卡备份.png" alt="">
+            <img src="../../../assets/qiXianKa.png" alt="">
         </div>
         <div class="member_right">
             <p>会员期限卡</p>
@@ -140,7 +140,7 @@
     <!-- --------------------------会员储值卡--------------------------------------- -->
     <div class="member2">
         <div class="member_1">
-            <img src="../../assets/储值卡备份.png" alt="">
+            <img src="../../../assets/chuZhiKa.png" alt="">
         </div>
         <div class="member_right">
             <p>会员储值卡</p>

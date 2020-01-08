@@ -80,7 +80,7 @@ export default {
     background:rgba(245,246,247,1);
   }
   .card {
-    background: url('../../../assets/储值卡备份 (1).png') no-repeat;
+    background: url('../../../assets/chuZhiKa.png') no-repeat;
     background-size: 100%;
     width: 351px;
     height: 225px;

@@ -22,6 +22,32 @@
         <div>购买单次票</div>
       </div>
     </div>
+    <div class="nav">
+      <div class="nav1">
+        <span class="bb">可用时间： 07:30-23:00</span>
+        <span>羽毛球-闪客单人票</span>
+        <div class="aa">
+          <span>￥80.00</span>
+          <del>￥100.00</del>
+        </div>
+      </div>
+      <div class="nav2">
+        <div>购买单次票</div>
+      </div>
+    </div>
+    <div class="nav">
+      <div class="nav1">
+        <span class="bb">可用时间： 07:30-23:00</span>
+        <span>羽毛球-闪客单人票</span>
+        <div class="aa">
+          <span>￥80.00</span>
+          <del>￥100.00</del>
+        </div>
+      </div>
+      <div class="nav2">
+        <div>购买单次票</div>
+      </div>
+    </div>
 
   </div>
 </template>

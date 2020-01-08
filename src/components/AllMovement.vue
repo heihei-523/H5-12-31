@@ -1,7 +1,26 @@
 <template>
   <div>
     <div class="goupiao">
-      <div class="picture">
+      <div class="picture" @click="onClick">
+        <img src="../assets/banner.png"/>
+        <div class="lucency">
+          <div class="lanqiu">
+            <p>乌兰察布市体育馆</p>
+            <span>篮球</span>
+          </div>
+          <div class="distance">
+            <span>1.8km</span>
+            <div>内蒙古自治区乌兰察布市集宁区格根西街</div>
+          </div>
+        </div>
+      </div>
+      <div class="btn">
+        <van-button plain hairline type="primary">预定</van-button>
+        <van-button plain hairline type="primary">购票</van-button>
+      </div>
+    </div>
+    <div class="goupiao">
+      <div class="picture" @click="onClick">
         <img src="../assets/banner.png" alt />
         <div class="lucency">
           <div class="lanqiu">
@@ -20,26 +39,7 @@
       </div>
     </div>
     <div class="goupiao">
-      <div class="picture">
-        <img src="../assets/banner.png" alt />
-        <div class="lucency">
-          <div class="lanqiu">
-            <p>乌兰察布市体育馆</p>
-            <span>篮球</span>
-          </div>
-          <div class="distance">
-            <span>1.8km</span>
-            <div>内蒙古自治区乌兰察布市集宁区格根西街</div>
-          </div>
-        </div>
-      </div>
-      <div class="btn">
-        <van-button plain hairline type="primary">预定</van-button>
-        <van-button plain hairline type="primary">购票</van-button>
-      </div>
-    </div>
-    <div class="goupiao">
-      <div class="picture">
+      <div class="picture" @click="onClick">
         <img src="../assets/banner.png" alt />
         <div class="lucency">
           <div class="lanqiu">
@@ -69,6 +69,9 @@ export default {
   created () {
   },
   methods: {
+    onClick () {
+      this.$router.push({ path: '/denueDetails' })
+    }
   }
 
 }

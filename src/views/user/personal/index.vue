@@ -7,10 +7,10 @@
       </van-nav-bar>
       <div class="portrait">
           <div class="p1">
-            <img src="../../assets/头像.png" alt="" class="t_1">
+            <img src="../../../assets/touXiang.png" alt="" class="t_1">
             <h6>昵称</h6>
             <span>编辑</span>
-            <img src="../../assets/icon_morearrow.png" alt="">
+            <img src="../../../assets/icon_morearrow.png" alt="">
           </div>
       </div>
       <div class="order">
@@ -21,15 +21,15 @@
           </div>
           <div class="o2">
               <div>
-                  <img src="../../assets/场地订单.png" alt="">
+                  <img src="../../../assets/changDiDingDan.png" alt="">
                   <span>场地订单</span>
               </div>
               <div>
-                  <img src="../../assets/门票订单.png" alt="">
+                  <img src="../../../assets/MenPiaoDingdan.png" alt="">
                   <span>门票订单</span>
               </div>
               <div>
-                  <img src="../../assets/健身订单.png" alt="">
+                  <img src="../../../assets/jianShenDingDan.png" alt="">
                   <span>商品订单</span>
               </div>
           </div>
@@ -42,27 +42,27 @@
           </div>
           <div class="o2">
               <div>
-                  <img src="../../assets/我的会员卡.png" alt="">
+                  <img src="../../../assets/Mycard.png" alt="">
                   <span>我的会员卡</span>
               </div>
               <div>
-                  <img src="../../assets/会员充值.png" alt="">
+                  <img src="../../../assets/huyuanchongzhi.png" alt="">
                   <span>会员充值</span>
               </div>
               <div>
-                  <img src="../../assets/购买新卡.png" alt="">
+                  <img src="../../../assets/goumaixinka.png" alt="">
                   <span>购买新卡</span>
               </div>
           </div>
       </div>
       <van-cell title="我的门票" is-link>
-          <img src="../../assets/我的门票.png" alt="" slot="icon">
+          <img src="../../../assets/Mytickets.png" alt="" slot="icon">
       </van-cell>
       <van-cell title="发票申请" is-link>
-          <img src="../../assets/发票申请.png" alt="" slot="icon">
+          <img src="../../../assets/invoice.png" alt="" slot="icon">
       </van-cell>
       <van-cell title="意见反馈" is-link>
-          <img src="../../assets/意见反馈.png" alt="" slot="icon">
+          <img src="../../../assets/yijianfankui.png" alt="" slot="icon">
       </van-cell>
       <div class="bottom"></div>
   </div>

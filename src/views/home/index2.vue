@@ -114,7 +114,7 @@
     <!-- ---------------------------会员次卡---------------------------------------- -->
     <div class="member">
         <div class="member_1">
-            <img src="../../assets/次卡备份.png" alt="">
+            <img src="../../assets/CiKa.png" alt="">
         </div>
         <div class="member_right">
             <p>会员次卡</p>
@@ -128,7 +128,7 @@
     <!-- --------------------会员期限卡-------------------------------- -->
     <div class="member1">
         <div class="member_1">
-            <img src="../../assets/期限卡备份.png" alt="">
+            <img src="../../assets/qiXianKa.png" alt="">
         </div>
         <div class="member_right">
             <p>会员期限卡</p>
@@ -143,7 +143,7 @@
     <!-- --------------------------会员储值卡--------------------------------------- -->
     <div class="member2">
         <div class="member_1">
-            <img src="../../assets/储值卡备份.png" alt="">
+            <img src="../../assets/chuZhiKa.png" alt="">
         </div>
         <div class="member_right">
             <p>会员储值卡</p>
