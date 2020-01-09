@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="app">
     <!-- 单馆的首页 -->
     <div>
-      <van-nav-bar :title="venueName" @click-left="onClickLeft">
+      <van-nav-bar :title="venueName" @click-left="onClickLeft" fixed>
         <van-icon name="cross" slot="left" />
         <van-icon name="ellipsis" slot="right" />
       </van-nav-bar>
@@ -17,7 +17,14 @@
           </span>
         </div>
         <div>
-          <img :src="signImg" alt class="t2" />
+          <van-swipe :autoplay="3000" indicator-color="white" :height="200">
+            <van-swipe-item>
+              <img src="../../assets/banner.png" class="img" />
+            </van-swipe-item>
+            <van-swipe-item>
+              <img src="../../assets/banner.png" class="img" />
+            </van-swipe-item>
+          </van-swipe>
         </div>
       </div>
       <img :src="signImg" class="tuo" />
@@ -42,11 +49,12 @@
           它来啦 它来啦
           他“携风带雪”向你走来啦
         </p>
-        <p v-show="more">i很多覅的福克斯当年覅粉红丝带方式</p>
+        <p v-show="more">2020年1月4日开始至7日，我国自西向东出现大范围雨雪天气过程。中央气象台5日上午10点继续发布暴雪蓝色预警。
+          它来啦 它来啦
+          他“携风带雪”向你走来啦
+        </p>
+        <div class="xianshi" @click="onChangeCollapse">{{collapsTitile}}</div>
       </div>
-      <van-collapse v-model="activeNames" :border="false" @change="onChangeCollapse">
-        <van-collapse-item :title="collapsTitile" name="2"></van-collapse-item>
-      </van-collapse>
     </div>
     <div class="emptybox"></div>
     <div class="reserve">
@@ -113,45 +121,45 @@
     </div>
     <!-- ---------------------------会员次卡---------------------------------------- -->
     <div class="member">
-        <div class="member_1">
-            <img src="../../assets/CiKa.png" alt="">
+      <div class="member_1">
+        <img src="../../assets/CiKa.png" alt />
+      </div>
+      <div class="member_right">
+        <p>会员次卡</p>
+        <span class="cardClass">卡类型</span>
+        <div>
+          <span>单次卡</span>
+          <span>多次卡</span>
         </div>
-        <div class="member_right">
-            <p>会员次卡</p>
-            <span class="cardClass">卡类型</span>
-            <div>
-                <span>单次卡</span>
-                <span>多次卡</span>
-            </div>
-        </div>
+      </div>
     </div>
     <!-- --------------------会员期限卡-------------------------------- -->
     <div class="member1">
-        <div class="member_1">
-            <img src="../../assets/qiXianKa.png" alt="">
+      <div class="member_1">
+        <img src="../../assets/qiXianKa.png" alt />
+      </div>
+      <div class="member_right">
+        <p>会员期限卡</p>
+        <span class="cardClass">卡类型</span>
+        <div>
+          <span>年卡</span>
+          <span>季卡</span>
+          <span>月卡</span>
         </div>
-        <div class="member_right">
-            <p>会员期限卡</p>
-            <span class="cardClass">卡类型</span>
-            <div>
-                <span>年卡</span>
-                <span>季卡</span>
-                <span>月卡</span>
-            </div>
-        </div>
+      </div>
     </div>
     <!-- --------------------------会员储值卡--------------------------------------- -->
     <div class="member2">
-        <div class="member_1">
-            <img src="../../assets/chuZhiKa.png" alt="">
+      <div class="member_1">
+        <img src="../../assets/chuZhiKa.png" alt />
+      </div>
+      <div class="member_right">
+        <p>会员储值卡</p>
+        <span class="cardClass">卡类型</span>
+        <div>
+          <span>会员储值卡</span>
         </div>
-        <div class="member_right">
-            <p>会员储值卡</p>
-            <span class="cardClass">卡类型</span>
-            <div>
-                <span>会员储值卡</span>
-            </div>
-        </div>
+      </div>
     </div>
     <!-- ----------------------------------------------------------------------------- -->
     <div class="zuidi">
@@ -236,160 +244,196 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.app {
+  width: 375px;
+}
+//-----------------------------------------------
+.xianshi {
+  width: 100%;
+  text-align: center;
+  background:rgba(255,255,255,1);
+  color:rgba(138,140,153,1);
+  font-size: 14px;
+  padding-bottom: 7px;
+}
+//-----------------------------------------------
+// -------------------轮播图-------------------------------------------
+.van-swipe {
+  // position: relative;
+  height: 164px;
+}
+.img {
+  width: 100%;
+}
+/deep/.van-swipe__indicator {
+  width: 16px;
+  border-radius: 0;
+  height: 4px;
+  margin-bottom: 25px;
+}
+//------------------------------------------------------------------
 .member {
-    display: flex;
-    width: 369px;
+  display: flex;
+  width: 360px;
+  height: 90px;
+  margin-left: 10px;
+  margin-bottom: 15px;
+  .member_1 {
+    display: inline-block;
+    width: 140px;
     height: 90px;
-    margin-left: 10px;
-    margin-bottom: 15px;
-    .member_1 {
-        display: inline-block;
-        width: 140px;
-        height: 90px;
+    img {
+      width: 140px;
+      height: 90px;
     }
-    .member_right {
-        display: inline-block;
-        margin-top: 4px;
-        margin-left: 6px;
-        height: 86px;
-        width: 222px;
-        p {
-            display: block;
-            font-size:16px;
-            font-family:PingFangSC-Medium,PingFang SC;
-            font-weight:500;
-            color:rgba(92,93,102,1);
-            margin-bottom: 12px;
-        }
-        .cardClass {
-            font-size:13px;
-            font-family:PingFangSC-Regular,PingFang SC;
-            font-weight:400;
-            color:rgba(190,192,204,1);
-        }
-        div  {
-            display: block;
-            font-size:11px;
-            font-family:PingFangSC-Regular,PingFang SC;
-            font-weight:400;
-            color:rgba(24,144,255,1);
-            line-height:16px;
-            span {
-                width:45px;
-                height:20px;
-                background:rgba(202,230,255,1);
-                margin-right: 5px;
-                margin-right: 3px;
-                border-radius: 2px;
-            }
-        }
+  }
+  .member_right {
+    display: inline-block;
+    margin-top: 4px;
+    margin-left: 6px;
+    height: 86px;
+    width: 222px;
+    p {
+      display: block;
+      font-size: 16px;
+      font-family: PingFangSC-Medium, PingFang SC;
+      font-weight: 500;
+      color: rgba(92, 93, 102, 1);
+      margin-bottom: 12px;
     }
+    .cardClass {
+      font-size: 13px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: rgba(190, 192, 204, 1);
+    }
+    div {
+      display: block;
+      font-size: 11px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: rgba(24, 144, 255, 1);
+      line-height: 16px;
+      span {
+        width: 45px;
+        height: 20px;
+        background: rgba(202, 230, 255, 1);
+        margin-right: 5px;
+        margin-right: 3px;
+        border-radius: 2px;
+      }
+    }
+  }
 }
 //-------------------------------------------------------------------------
 .member1 {
-    display: flex;
-    width: 369px;
+  display: flex;
+  width: 360px;
+  height: 90px;
+  margin-left: 10px;
+  margin-bottom: 15px;
+  .member_1 {
+    display: inline-block;
+    width: 140px;
     height: 90px;
-    margin-left: 10px;
-    margin-bottom: 15px;
-    .member_1 {
-        display: inline-block;
-        width: 140px;
-        height: 90px;
+    img {
+      width: 140px;
+      height: 90px;
     }
-    .member_right {
-        display: inline-block;
-        margin-top: 4px;
-        margin-left: 6px;
-        height: 86px;
-        width: 222px;
-        p {
-            display: block;
-            font-size:16px;
-            font-family:PingFangSC-Medium,PingFang SC;
-            font-weight:500;
-            color:rgba(92,93,102,1);
-            margin-bottom: 12px;
-        }
-        .cardClass {
-            font-size:13px;
-            font-family:PingFangSC-Regular,PingFang SC;
-            font-weight:400;
-            color:rgba(190,192,204,1);
-        }
-        div  {
-            display: block;
-            font-size:11px;
-            font-family:PingFangSC-Regular,PingFang SC;
-            font-weight:400;
-            color:#FA6400;
-            line-height:16px;
-            span {
-                width:45px;
-                height:20px;
-                background:rgba(255,214,187,1);
-                margin-right: 5px;
-                margin-right: 3px;
-                border-radius: 2px;
-            }
-        }
+  }
+  .member_right {
+    display: inline-block;
+    margin-top: 4px;
+    margin-left: 6px;
+    height: 86px;
+    width: 222px;
+    p {
+      display: block;
+      font-size: 16px;
+      font-family: PingFangSC-Medium, PingFang SC;
+      font-weight: 500;
+      color: rgba(92, 93, 102, 1);
+      margin-bottom: 12px;
     }
+    .cardClass {
+      font-size: 13px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: rgba(190, 192, 204, 1);
+    }
+    div {
+      display: block;
+      font-size: 11px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #fa6400;
+      line-height: 16px;
+      span {
+        width: 45px;
+        height: 20px;
+        background: rgba(255, 214, 187, 1);
+        margin-right: 5px;
+        margin-right: 3px;
+        border-radius: 2px;
+      }
+    }
+  }
 }
 //------------------------------------------------------------------------//
 .member2 {
-    display: flex;
-    width: 369px;
+  display: flex;
+  width: 360px;
+  height: 90px;
+  margin-left: 10px;
+  margin-bottom: 15px;
+  .member_1 {
+    display: inline-block;
+    width: 140px;
     height: 90px;
-    margin-left: 10px;
-    margin-bottom: 15px;
-    .member_1 {
-        display: inline-block;
-        width: 140px;
-        height: 90px;
+    img {
+      width: 140px;
+      height: 90px;
     }
-    .member_right {
-        display: inline-block;
-        margin-top: 4px;
-        margin-left: 6px;
-        height: 86px;
-        width: 222px;
-        p {
-            display: block;
-            font-size:16px;
-            font-family:PingFangSC-Medium,PingFang SC;
-            font-weight:500;
-            color:rgba(92,93,102,1);
-            margin-bottom: 12px;
-        }
-        .cardClass {
-            font-size:13px;
-            font-family:PingFangSC-Regular,PingFang SC;
-            font-weight:400;
-            color:rgba(190,192,204,1);
-        }
-        div  {
-            display: block;
-            font-size:11px;
-            font-family:PingFangSC-Regular,PingFang SC;
-            font-weight:400;
-            color:#5C5D66;
-            line-height:16px;
-            span {
-                width:45px;
-                height:20px;
-                background:#DEDFE3;
-                margin-right: 5px;
-                margin-right: 3px;
-                border-radius: 2px;
-            }
-        }
+  }
+  .member_right {
+    display: inline-block;
+    margin-top: 4px;
+    margin-left: 6px;
+    height: 86px;
+    width: 222px;
+    p {
+      display: block;
+      font-size: 16px;
+      font-family: PingFangSC-Medium, PingFang SC;
+      font-weight: 500;
+      color: rgba(92, 93, 102, 1);
+      margin-bottom: 12px;
     }
+    .cardClass {
+      font-size: 13px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: rgba(190, 192, 204, 1);
+    }
+    div {
+      display: block;
+      font-size: 11px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #5c5d66;
+      line-height: 16px;
+      span {
+        width: 45px;
+        height: 20px;
+        background: #dedfe3;
+        margin-right: 5px;
+        margin-right: 3px;
+        border-radius: 2px;
+      }
+    }
+  }
 }
 //-------------------------------------------------------------------------
-.t2 {
-  width: 375px;
-  height: 161px;
-}
 .tuo {
   border-radius: 3%;
   margin: 0 10px;
@@ -456,15 +500,6 @@ h5 {
 /deep/.van-collapse-item .van-collapse-item__title--expanded::after {
   visibility: hidden;
 }
-/deep/.van-cell__title {
-  text-align: center;
-  background-color: #fff;
-  padding-left: 120px;
-  span {
-    margin: 0;
-    padding: 0;
-  }
-}
 /deep/.van-collapse-item__title .van-cell__right-icon {
   margin: 0;
   padding-right: 150px;
@@ -493,7 +528,7 @@ p {
       color: #8a8c99;
     }
     img {
-        margin-right: 6px;
+      margin-right: 6px;
     }
     .icon_arrow {
       padding-top: 3px;
@@ -548,7 +583,8 @@ p {
   /deep/.van-cell__title {
     background-color: #fff;
     text-align: left;
-    padding: 0;
+    // padding: 0;
+    padding: 7px 0 0 0;
     .van-cell__label {
       font-size: 14px;
       color: #fa6400;
@@ -556,12 +592,13 @@ p {
   }
   /deep/.van-cell {
     position: relative;
+    height: 60px;
     .span {
       position: absolute;
       color: #bec0cc;
       font-size: 11px;
-      left: 69px;
-      top: 34px;
+      left: 47px;
+      top: 31px;
     }
   }
   /deep/.tabs {
@@ -582,6 +619,10 @@ p {
     color: rgba(92, 93, 102, 1);
     line-height: 20px;
   }
+  img {
+    width: 375px;
+    height: 300px;
+  }
   .neiRong {
     padding-left: 10px;
     width: 350px;
@@ -592,5 +633,13 @@ p {
     color: rgba(138, 140, 153, 1);
     line-height: 20px;
   }
+}
+// van-collapse-item
+/deep/.van-cell {
+  padding: 0;
+}
+.van-button--plain.van-button--info {
+  // color: #1989fa;
+  margin: 10px 0 0 0;
 }
 </style>

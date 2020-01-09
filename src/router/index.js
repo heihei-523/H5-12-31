@@ -14,6 +14,7 @@ import VenueBooking from '../views/VenueList/VenueBooking' // 场地预定单
 import BuyTicket from '../views/VenueList/BuyTicket' // 购买门票
 import MembershipDetails from '../views/user/MembershipcardDetails' // 会员卡详情
 import InvoiceDetails from '../views/invoice/invoiceDetails.vue' // 发票详情
+import MyInvoice from '../views/invoice/MyInvoice.vue' // 我的发票
 
 Vue.use(VueRouter)
 
@@ -76,6 +77,10 @@ const routes = [
   {
     path: '/invoiceDetails', // 发票详情
     component: InvoiceDetails
+  },
+  {
+    path: '/myInvoice', // 我的发票
+    component: MyInvoice
   }
 ]
 const router = new VueRouter({

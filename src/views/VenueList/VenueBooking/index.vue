@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app">
     <!-- 场地预定 -->
     <div>
       <van-nav-bar title="场地预定">
@@ -59,6 +59,11 @@
       <van-field label="客户姓名"
                  placeholder="请填写用户姓名" />
     </van-cell-group>
+    <div class="bottom">
+      <div class="left">实付金额:</div>
+      <span class="qian">352.00元</span>
+      <van-button type="info">立即支付</van-button>
+    </div>
   </div>
 </template>
 
@@ -70,6 +75,10 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.app {
+  background-color: #f5f6f7;
+  height: 667px;
+}
 .van-cell__title span {
   width: 114px;
   height: 22px;
@@ -96,6 +105,7 @@ export default {
   font-weight: 500;
   color: rgba(46, 47, 51, 1);
   line-height: 22px;
+  background-color: #fff;
 }
 .yumao1 {
   width: 65px;
@@ -143,6 +153,7 @@ export default {
 }
 .boss {
   padding: 15px 13px 8px 12px;
+  background-color: #fff;
   border-bottom: 0.5px solid rgb(243, 239, 239);
 }
 .pad {
@@ -153,6 +164,7 @@ export default {
   display: flex;
   justify-content: space-between;
   padding: 0 12px;
+  background-color: #fff;
   span {
     width: 70px;
     height: 20px;
@@ -176,5 +188,37 @@ export default {
   width: 375px;
   height: 9px;
   background-color: rgb(248, 245, 245);
+}
+.bottom {
+  display: flex;
+  padding-left: 14px;
+  height: 50px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  // padding-right: 10px;
+  margin-right: 10px;
+  .left {
+    height:22px;
+    font-size:16px;
+    font-family:PingFangSC-Regular,PingFang SC;
+    font-weight:400;
+    color:rgba(92,93,102,1);
+    flex: 2;
+    line-height: 50px;
+  }
+  .qian {
+    height:25px;
+    font-size:18px;
+    font-family:PingFangSC-Medium,PingFang SC;
+    font-weight:500;
+    color:rgba(250,100,0,1);
+    line-height:50px;
+    flex: 4;
+  }
+  .van-button {
+    flex: 2;
+  }
 }
 </style>

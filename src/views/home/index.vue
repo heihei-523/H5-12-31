@@ -10,9 +10,9 @@
       </van-nav-bar>
       <div class="beiJingf">
             <span class="beiJing">
-                <img src="../../assets/icon_location.png" alt="">
+                <img src="../../assets/icon_location.png" alt="" class="image">
                 <a href="#">北京市</a>
-                 <img src="../../assets/icon_dropdown.png" alt="">
+                 <img src="../../assets/icon_dropdown.png" alt="" class="image">
             </span>
       </div>
       <div>
@@ -80,6 +80,10 @@ export default {
         font-size: 14px;
         align-items: flex-start;
         width: 200px;
+        img {
+          width: 16px;
+          height: 16px;
+        }
         a {
             color: #8A8C99;
         }
