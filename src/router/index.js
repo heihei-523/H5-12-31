@@ -18,6 +18,7 @@ import MyInvoice from '../views/invoice/MyInvoice.vue' // 我的发票
 import Feedback from '../views/feedback' // 意见反馈
 import TicketsDetails from '../views/VenueList/ticketsDetails' // 门票详情
 import PayOrder from '../views/VenueList/payOrder' // 支付订单
+import PurchaseMembershipCard from '../views/VenueList/purchaseMembershipCard' // 购买会员卡
 
 Vue.use(VueRouter)
 
@@ -49,10 +50,6 @@ const routes = [
     path: '/personal', // 个人中心
     component: Personal
   },
-  // {
-  //   path: '/place', // 场块地
-  //   component: Place
-  // },
   {
     path: '/user/userrecharge', // 会员卡充值
     component: Userrecharge
@@ -74,7 +71,7 @@ const routes = [
     component: BuyTicket
   },
   {
-    path: '/membershipDetails', // 会员卡详情
+    path: '/membershipDetails', // 充值会员卡详情
     component: MembershipDetails
   },
   {
@@ -97,6 +94,10 @@ const routes = [
   {
     path: '/payOrder',
     component: PayOrder
+  },
+  {
+    path: '/purchaseMembershipCard', // 购买会员卡页
+    component: PurchaseMembershipCard
   }
 ]
 const router = new VueRouter({
