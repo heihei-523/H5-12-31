@@ -2,13 +2,14 @@
   <div>
     <!-- 购买门票 -->
     <div>
-      <van-nav-bar title="购买门票">
+      <van-nav-bar title="购买门票" fixed>
         <van-icon name="cross"
                   slot="left" />
         <van-icon name="ellipsis"
                   slot="right" />
       </van-nav-bar>
     </div>
+    <div class="kong"></div>
     <div class="nav">
       <div class="nav1">
         <span class="bb">可用时间： 07:30-23:00</span>
@@ -60,6 +61,10 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.kong {
+  height: 54px;
+  width: 100%;
+}
 .nav {
   display: flex;
   justify-content: space-between;
