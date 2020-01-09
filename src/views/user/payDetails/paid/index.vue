@@ -79,6 +79,11 @@
         <div class="boll">2020/10/30 23:12:01</div>
       </div>
     </div>
+    <div class="an_niu">
+      <div class="shi_fu">实付金额：</div>
+      <div class="jin_e">352.00</div>
+      <button>再次预定</button>
+    </div>
   </div>
 </template>
 

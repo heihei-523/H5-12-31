@@ -1,0 +1,52 @@
+<template>
+  <div>
+    <div class="app">
+      <van-nav-bar title="会员卡列表" fixed>
+        <van-icon name="cross" slot="left" />
+        <van-icon name="ellipsis" slot="right" />
+      </van-nav-bar>
+      <div class="kong"></div>
+      <van-tabs v-model="active" color="#1890FF" title-active-color="#1890FF" sticky>
+        <van-tab title="全部" to="/ticketsOrder/details" replace></van-tab>
+        <van-tab title="待支付"></van-tab>
+        <van-tab title="已支付"></van-tab>
+        <van-tab title="已取消"></van-tab>
+      </van-tabs>
+      <div class="kong_2"></div>
+      <router-view></router-view>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      active: 0
+    }
+  }
+}
+</script>
+
+<style lang="less" scoped>
+.app {
+  background-color: #f5f6f7;
+  height: 812px;
+}
+/deep/.van-tabs {
+    position: fixed;
+    width: 100%;
+}
+.kong {
+  height: 45px;
+  background-color: #fff;
+}
+.kong_2 {
+  height: 55px;
+}
+.van-tab__pane {
+  // padding: 0px 0 12px 0;
+  background-color: #f5f6f7;
+  // margin-top: 7px;
+}
+</style>
