@@ -1,0 +1,60 @@
+.van-ellipsis {
+  font-size: 16px;
+  font-weight: 600;
+  /* font-family: "SimHei"; */
+}
+.logo {
+  margin: 30px 151px 0 151px;
+  width: 70px;
+}
+.van-nav-bar__left .van-icon-cross {
+  font-size: 20px;
+  font-weight: 600;
+  color: #5c5d66;
+}
+.van-nav-bar__right .van-icon-ellipsis {
+  font-size: 20px;
+  font-weight: 600;
+  color: #5c5d66;
+}
+.an_niu {
+  background-color: #fff;
+  position: fixed;
+  width: 349px;
+  height: 50px;
+  display: flex;
+  bottom: 0;
+  align-items: center;
+  padding: 0 13px;
+}
+.an_niu .shi_fu {
+  width: 81px;
+  height: 22px;
+  font-size: 16px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #5c5d66;
+  line-height: 22px;
+  flex: 3;
+}
+.an_niu .jin_e {
+  width: 79px;
+  height: 25px;
+  font-size: 18px;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #fa6400;
+  line-height: 25px;
+  flex: 4;
+}
+.an_niu button {
+  font-size: 16px;
+  font-family: PingFangSC-Medium, PingFang SC;
+  background-color: #1890ff;
+  font-weight: 500;
+  color: #ffffff;
+  width: 114px;
+  height: 40px;
+  border: 0;
+  flex: 3;
+}

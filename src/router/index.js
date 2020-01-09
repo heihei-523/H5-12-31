@@ -16,6 +16,7 @@ import MembershipDetails from '../views/user/MembershipcardDetails' // 会员卡
 import InvoiceDetails from '../views/invoice/invoiceDetails.vue' // 发票详情
 import MyInvoice from '../views/invoice/MyInvoice.vue' // 我的发票
 import Feedback from '../views/feedback' // 意见反馈
+import TicketsDetails from '../views/VenueList/ticketsDetails' // 门票详情
 
 Vue.use(VueRouter)
 
@@ -84,8 +85,13 @@ const routes = [
     component: MyInvoice
   },
   {
-    path: '/feedback',
+    path: '/feedback', // 意见反馈
     component: Feedback
+  },
+  {
+    path: '/ticketsDetails', // 门票详情
+    component: TicketsDetails
+
   }
 ]
 const router = new VueRouter({

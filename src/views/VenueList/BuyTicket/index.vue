@@ -87,7 +87,6 @@ export default {
     }
 
     .aa {
-      margin-top: 8px;
       span {
         width: 52px;
         height: 20px;

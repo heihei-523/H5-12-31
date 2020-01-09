@@ -29,7 +29,8 @@ import {
   Area,
   Panel,
   RadioGroup,
-  Radio
+  Radio,
+  Stepper
 } from 'vant'
 
 Vue
@@ -63,3 +64,4 @@ Vue
   .use(Panel)
   .use(Radio)
   .use(RadioGroup)
+  .use(Stepper)
