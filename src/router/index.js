@@ -19,6 +19,8 @@ import Feedback from '../views/feedback' // 意见反馈
 import TicketsDetails from '../views/VenueList/ticketsDetails' // 门票详情
 import PayOrder from '../views/VenueList/payOrder' // 支付订单
 import PurchaseMembershipCard from '../views/VenueList/purchaseMembershipCard' // 购买会员卡
+import CardList from '../views/VenueList/cardList' // 会员卡列表的头部
+import Card from '../views/VenueList/cardList/card' // 会员卡列表
 
 Vue.use(VueRouter)
 
@@ -98,6 +100,16 @@ const routes = [
   {
     path: '/purchaseMembershipCard', // 购买会员卡页
     component: PurchaseMembershipCard
+  },
+  {
+    path: '/cardList', // 会员卡列表的头部
+    component: CardList,
+    children: [
+      {
+        path: '/cardList/list',
+        component: Card
+      }
+    ]
   }
 ]
 const router = new VueRouter({
