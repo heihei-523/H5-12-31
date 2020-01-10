@@ -30,7 +30,8 @@ import {
   Panel,
   RadioGroup,
   Radio,
-  Stepper
+  Stepper,
+  DatetimePicker
 } from 'vant'
 
 Vue
@@ -65,3 +66,4 @@ Vue
   .use(Radio)
   .use(RadioGroup)
   .use(Stepper)
+  .use(DatetimePicker)

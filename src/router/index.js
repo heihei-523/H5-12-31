@@ -24,9 +24,13 @@ import Card from '../views/VenueList/cardList/card' // 会员卡列表
 import TicketsOrder from '../views/user/ticketsOrder' // 门票订单列表
 import Details from '../views/user/ticketsOrder/Details' // 门票订单详情
 import CommodityOrder from '../views/user/commodityOrder' // 商品订单
-import CancelPay from '../views/user/payDetails/cancelPay' // 取消商品订单详情
-import Paid from '../views/user/payDetails/paid' // 已支付商品订单详情
+import CancelPay from '../views/user/payDetails/cancelPay' // 取消场馆订单详情
+import Paid from '../views/user/payDetails/paid' // 已支付场馆订单详情
 import AwaitPay from '../views/user/ticketsPay/awaitPay' // 门票待支付订单详情
+import PaidDetails from '../views/user/ticketsPay/paidDetails' // 门票待支付详情
+import CancelTicketsPay from '../views/user/ticketsPay/cancel' // 门票取消支付详情
+import PurchaseMember from '../views/user/purchaseMember' // 个人中心/购买会员卡
+import CompileMember from '../views/user/compileMember' // 编辑会员详情
 
 Vue.use(VueRouter)
 
@@ -132,16 +136,32 @@ const routes = [
     component: CommodityOrder
   },
   {
-    path: '/cancelPay', // 取消订单详情
+    path: '/cancelPay', // 取消订单详情----场馆
     component: CancelPay
   },
   {
-    path: '/paid', // 已支付商品付款详情
+    path: '/paid', // 已支付付款详情----场馆
     component: Paid
   },
   {
-    path: '/awaitPay',
+    path: '/awaitPay', // 等待付款详情---门票
     component: AwaitPay
+  },
+  {
+    path: '/paidDetails', // 门票已支付详情
+    component: PaidDetails
+  },
+  {
+    path: '/cancelTicketsPay', // 门票取消支付详情
+    component: CancelTicketsPay
+  },
+  {
+    path: '/purchaseMember',
+    component: PurchaseMember
+  },
+  {
+    path: '/CompileMember',
+    component: CompileMember
   }
 
 ]
