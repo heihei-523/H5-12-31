@@ -27,12 +27,16 @@ import CommodityOrder from '../views/user/commodityOrder' // 商品订单
 import CancelPay from '../views/user/payDetails/cancelPay' // 取消场馆订单详情
 import Paid from '../views/user/payDetails/paid' // 已支付场馆订单详情
 import AwaitPay from '../views/user/ticketsPay/awaitPay' // 门票待支付订单详情
-import PaidDetails from '../views/user/ticketsPay/paidDetails' // 门票待支付详情
+import PaidDetails from '../views/user/ticketsPay/paidDetails' // 门票已支付详情
 import CancelTicketsPay from '../views/user/ticketsPay/cancel' // 门票取消支付详情
 import PurchaseMember from '../views/user/purchaseMember' // 个人中心/购买会员卡
 import CompileMember from '../views/user/compileMember' // 编辑会员详情
 import MyTickets from '../views/user/MyTickets' // 我的门票
 import MyTicketsList from '../views/user/MyTickets/list' // 我的门票---------二级路由
+import MyMembershipCard from '../views/user/myMembershipCard' // 我的会员卡列表
+import VenueOrder from '../views/user/VenueOrder' // 场馆订单
+import VenueOrderList from '../views/user/VenueOrder/Details' // 场馆订单----------二级路由
+import Await from '../views/user/payDetails/await' // 场馆待支付订单
 
 Vue.use(VueRouter)
 
@@ -174,6 +178,24 @@ const routes = [
         component: MyTicketsList
       }
     ]
+  },
+  {
+    path: '/myMembershipCard',
+    component: MyMembershipCard
+  },
+  {
+    path: '/venueOrder',
+    component: VenueOrder,
+    children: [
+      {
+        path: '/venueOrder/list',
+        component: VenueOrderList
+      }
+    ]
+  },
+  {
+    path: '/Await',
+    component: Await
   }
 
 ]

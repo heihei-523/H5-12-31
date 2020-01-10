@@ -1,5 +1,5 @@
 <template>
-<!-- 门票订单列表 -->
+  <!-- 门票订单列表 -->
   <div>
     <div class="top">
       <div class="ding_dan_hao">
@@ -8,17 +8,17 @@
       </div>
       <div class="zhong">
         <div class="row_1">
-          <div class="row_1-1">乌兰察布体育馆</div>
+          <div class="row_1-1">隆兴羽毛球超级馆隆兴羽毛球超级馆</div>
           <div class="row_1-2">2019/01/07 18:22</div>
         </div>
-        <div class="row_2">羽毛球-散客单人票</div>
+        <div class="row_2">羽毛球 周日(03/13)</div>
         <div class="row_3">
-          <div class="row_3-1">单次票</div>
-          <div class="row_3-2">15元*1张</div>
+          <div class="row_3-1">第1号场地</div>
+          <div class="row_3-2">12:00 -14:00</div>
         </div>
         <div class="row_3">
-          <div class="row_3-1">有效期</div>
-          <div class="row_3-2">2020-01-01 至 2020-01-01</div>
+          <div class="row_3-1">第2号场地</div>
+          <div class="row_3-2">12:00 -14:00</div>
         </div>
       </div>
       <div class="shi_fu">
@@ -36,23 +36,22 @@
       </div>
       <div class="zhong">
         <div class="row_1">
-          <div class="row_1-1">乌兰察布体育馆</div>
+          <div class="row_1-1">隆兴羽毛球超级馆隆兴羽毛球超级馆</div>
           <div class="row_1-2">2019/01/07 18:22</div>
         </div>
-        <div class="row_2">羽毛球-散客单人票</div>
+        <div class="row_2">羽毛球 周日(03/13)</div>
         <div class="row_3">
-          <div class="row_3-1">单次票</div>
-          <div class="row_3-2">15元*1张</div>
+          <div class="row_3-1">第1号场地</div>
+          <div class="row_3-2">12:00 -14:00</div>
         </div>
         <div class="row_3">
-          <div class="row_3-1">有效期</div>
-          <div class="row_3-2">2020-01-01 至 2020-01-01</div>
+          <div class="row_3-1">第2号场地</div>
+          <div class="row_3-2">12:00 -14:00</div>
         </div>
       </div>
       <div class="shi_fu">
         <div class="shi_fu_1">实付：</div>
         <div class="monry">￥200</div>
-        <button class="del">再次购买</button>
         <button class="li_ji_zhi_fu" @click="OnPopup">查看二维码</button>
       </div>
     </div>
@@ -64,17 +63,17 @@
       </div>
       <div class="zhong">
         <div class="row_1">
-          <div class="row_1-1">乌兰察布体育馆</div>
+          <div class="row_1-1">隆兴羽毛球超级馆隆兴羽毛球超级馆</div>
           <div class="row_1-2">2019/01/07 18:22</div>
         </div>
-        <div class="row_2">羽毛球-散客单人票</div>
+        <div class="row_2">羽毛球 周日(03/13)</div>
         <div class="row_3">
-          <div class="row_3-1">单次票</div>
-          <div class="row_3-2">15元*1张</div>
+          <div class="row_3-1">第1号场地</div>
+          <div class="row_3-2">12:00 -14:00</div>
         </div>
         <div class="row_3">
-          <div class="row_3-1">有效期</div>
-          <div class="row_3-2">2020-01-01 至 2020-01-01</div>
+          <div class="row_3-1">第2号场地</div>
+          <div class="row_3-2">12:00 -14:00</div>
         </div>
       </div>
       <div class="shi_fu">
@@ -85,10 +84,10 @@
     </div>
     <!-- ------------------------------------------------------------------ -->
     <van-popup v-model="show" get-container="body">
-        <div class="popup">
-            <img src="#" alt="">
-            <span>3/5</span>
-        </div>
+      <div class="popup">
+        <img src="#" alt />
+        <span>3/5</span>
+      </div>
     </van-popup>
   </div>
 </template>
@@ -110,16 +109,16 @@ export default {
 
 <style lang="less" scoped>
 .popup {
-    width: 165px;
-    height: 196px;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    img {
-        width: 150px;
-        height: 150px;
-    }
+  width: 165px;
+  height: 196px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  img {
+    width: 150px;
+    height: 150px;
+  }
 }
 .top {
   display: flex;
@@ -160,17 +159,16 @@ export default {
       background-color: #fff;
       align-items: center;
       .row_1-1 {
+        height: 22px;
+        width: 200px;
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
-        width: 200px;
-        height: 22px;
         font-size: 16px;
         font-family: PingFangSC-Medium, PingFang SC;
         font-weight: 500;
         color: rgba(46, 47, 51, 1);
         line-height: 22px;
-        flex: 7;
       }
       .row_1-2 {
         height: 17px;
@@ -184,7 +182,6 @@ export default {
       }
     }
     .row_2 {
-      width: 121px;
       height: 20px;
       font-size: 14px;
       font-family: PingFangSC-Medium, PingFang SC;
@@ -308,7 +305,6 @@ export default {
         font-weight: 500;
         color: rgba(46, 47, 51, 1);
         line-height: 22px;
-        flex: 7;
       }
       .row_1-2 {
         height: 17px;
@@ -322,7 +318,6 @@ export default {
       }
     }
     .row_2 {
-      width: 121px;
       height: 20px;
       font-size: 14px;
       font-family: PingFangSC-Medium, PingFang SC;
@@ -436,11 +431,10 @@ export default {
       background-color: #fff;
       align-items: center;
       .row_1-1 {
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        width: 200px;
         height: 22px;
+        white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
         font-size: 16px;
         font-family: PingFangSC-Medium, PingFang SC;
         font-weight: 500;
@@ -460,7 +454,6 @@ export default {
       }
     }
     .row_2 {
-      width: 121px;
       height: 20px;
       font-size: 14px;
       font-family: PingFangSC-Medium, PingFang SC;

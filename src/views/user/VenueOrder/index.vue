@@ -1,13 +1,13 @@
 <template>
   <div>
     <div class="app">
-      <van-nav-bar title="门票订单" fixed>
+      <van-nav-bar title="场馆订单" fixed>
         <van-icon name="cross" slot="left" />
         <van-icon name="ellipsis" slot="right" />
       </van-nav-bar>
       <div class="kong"></div>
       <van-tabs v-model="active" color="#1890FF" title-active-color="#1890FF" sticky>
-        <van-tab title="全部" to="/ticketsOrder/details" replace></van-tab>
+        <van-tab title="全部" to="/venueOrder/list" replace></van-tab>
         <van-tab title="待支付"></van-tab>
         <van-tab title="已支付"></van-tab>
         <van-tab title="已取消"></van-tab>
