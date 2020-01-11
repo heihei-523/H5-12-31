@@ -118,7 +118,7 @@
           <input type="file" id="file" class="file-path" @change="changepic" />
           从相册选择
         </div>
-        <div class="H1" @click="videoCapture">
+        <div class="H1" @click="captureImage">
             拍照
             <!-- <input type="file" accept="image/*"> -->
         </div>
@@ -172,16 +172,16 @@ export default {
     }
   },
   methods: {
-    videoCapture () {
+    captureImage () {
       var cmr = window.plus.camera.getCamera()
-      var res = cmr.supportedVideoResolutions[0]
-      var fmt = cmr.supportedVideoFormats[0]
+      var res = cmr.supportedImageResolutions[0]
+      var fmt = cmr.supportedImageFormats[0]
       console.log('Resolution: ' + res + ', Format: ' + fmt)
-      cmr.startVideoCapture(function (path) {
-        alert('Capture video success: ' + path)
+      cmr.captureImage(function (path) {
+        alert('Capture image success: ' + path)
       },
       function (error) {
-        alert('Capture video failed: ' + error.message)
+        alert('Capture image failed: ' + error.message)
       },
       { resolution: res, format: fmt }
       )
