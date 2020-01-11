@@ -116,12 +116,11 @@
       <div class="HeadPortrait">
         <div class="H1">
           <input type="file" id="file" class="file-path" @change="changepic" />
-          从相机选择
+          从相册选择
         </div>
-        <div class="H1">
-          <van-uploader :capture='camera'>
+        <div class="H1" @click="videoCapture">
             拍照
-          </van-uploader>
+            <!-- <input type="file" accept="image/*"> -->
         </div>
         <div class="H3">取消</div>
       </div>
@@ -173,11 +172,26 @@ export default {
     }
   },
   methods: {
+    videoCapture () {
+      var cmr = window.plus.camera.getCamera()
+      var res = cmr.supportedVideoResolutions[0]
+      var fmt = cmr.supportedVideoFormats[0]
+      console.log('Resolution: ' + res + ', Format: ' + fmt)
+      cmr.startVideoCapture(function (path) {
+        alert('Capture video success: ' + path)
+      },
+      function (error) {
+        alert('Capture video failed: ' + error.message)
+      },
+      { resolution: res, format: fmt }
+      )
+    },
     // 图片预览
     changepic (e) {
       let file = e.target.files[0]
       let url = URL.createObjectURL(file)
       this.imgSrc = url
+      this.bottom_show = false
     },
     // 点击头像
     // onHeadPortrait () {
