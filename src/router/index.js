@@ -27,10 +27,11 @@ import CommodityOrder from '../views/user/commodityOrder' // 商品订单
 // import CancelPay from '../views/user/payDetails/cancelPay' // 取消场馆订单详情-----------
 // import Await from '../views/user/payDetails/await' // 场馆待支付订单---------
 // import Paid from '../views/user/payDetails/paid' // 已支付场馆订单详情------
-import VenuePayDetails from '../views/user/payDetails'
-import AwaitPay from '../views/user/ticketsPay/awaitPay' // 门票待支付订单详情
-import PaidDetails from '../views/user/ticketsPay/paidDetails' // 门票已支付详情
-import CancelTicketsPay from '../views/user/ticketsPay/cancel' // 门票取消支付详情
+import VenuePayDetails from '../views/user/venuePayDetails' // 已支付场馆订单详情
+// import AwaitPay from '../views/user/ticketsPay/awaitPay' // 门票待支付订单详情
+// import PaidDetails from '../views/user/ticketsPay/paidDetails' // 门票已支付详情
+// import CancelTicketsPay from '../views/user/ticketsPay/cancel' // 门票取消支付详情
+import TicketsPayDetails from '../views/user/ticketsPayDetails' // 门票支付详情
 import PurchaseMember from '../views/user/purchaseMember' // 个人中心/购买会员卡
 import CompileMember from '../views/user/compileMember' // 编辑会员详情
 import MyTickets from '../views/user/MyTickets' // 我的门票
@@ -158,24 +159,28 @@ const routes = [
     path: '/venuePayDetails',
     component: VenuePayDetails
   },
+  // {
+  //   path: '/awaitPay', // 等待付款详情---门票
+  //   component: AwaitPay
+  // },
+  // {
+  //   path: '/paidDetails', // 门票已支付详情
+  //   component: PaidDetails
+  // },
+  // {
+  //   path: '/cancelTicketsPay', // 门票取消支付详情
+  //   component: CancelTicketsPay
+  // },
   {
-    path: '/awaitPay', // 等待付款详情---门票
-    component: AwaitPay
-  },
-  {
-    path: '/paidDetails', // 门票已支付详情
-    component: PaidDetails
-  },
-  {
-    path: '/cancelTicketsPay', // 门票取消支付详情
-    component: CancelTicketsPay
+    path: '/ticketsPayDetails',
+    component: TicketsPayDetails
   },
   {
     path: '/purchaseMember',
     component: PurchaseMember
   },
   {
-    path: '/CompileMember',
+    path: '/CompileMember', // 编辑会员详情
     component: CompileMember
   },
   {

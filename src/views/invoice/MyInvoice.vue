@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <van-nav-bar title="我的发票" @click-left="onClickLeft" fixed>
+    <van-nav-bar title="我的发票" fixed>
       <van-icon name="cross" slot="left" />
       <van-icon name="ellipsis" slot="right" />
     </van-nav-bar>

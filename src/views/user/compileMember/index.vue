@@ -8,7 +8,7 @@
     <div class="tou_xiang">
       <div class="left">会员中心</div>
       <div class="tuo_pian" @click="bottom_show = true">
-        <img src="../../../assets/touXiang.png" />
+        <img :src="imgSrc" />
       </div>
       <div>
         <van-icon name="arrow" color="#c8c8cd" size="16px" />
@@ -114,8 +114,15 @@
     <!-- 底部弹出层之头像弹出 -->
     <van-popup v-model="bottom_show" position="bottom" :style="{ height: '30%' }">
       <div class="HeadPortrait">
-        <div class="H1">从相机选择</div>
-        <div class="H1">拍照</div>
+        <div class="H1">
+          <input type="file" id="file" class="file-path" @change="changepic" />
+          从相机选择
+        </div>
+        <div class="H1">
+          <van-uploader :capture='camera'>
+            拍照
+          </van-uploader>
+        </div>
         <div class="H3">取消</div>
       </div>
     </van-popup>
@@ -143,6 +150,8 @@ export default {
   name: 'compile',
   data () {
     return {
+      camera: 'camera',
+      imgSrc: '', // 图片预览
       minDate: new Date(1900, 0, 1),
       maxDate: new Date(2020, 10, 1),
       currentDate: new Date(),
@@ -164,6 +173,12 @@ export default {
     }
   },
   methods: {
+    // 图片预览
+    changepic (e) {
+      let file = e.target.files[0]
+      let url = URL.createObjectURL(file)
+      this.imgSrc = url
+    },
     // 点击头像
     // onHeadPortrait () {
     //   this.
@@ -229,6 +244,11 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.file-path {
+  background-color: #fff;
+  opacity: 0;
+  position: fixed;
+}
 .app {
   background-color: #f5f6f7;
   height: 812px;
@@ -255,6 +275,10 @@ export default {
   .tuo_pian {
     flex: 2;
     height: 60px;
+    img {
+      width: 60px;
+      height: 60px;
+    }
   }
 }
 .zi_liao {
@@ -277,8 +301,12 @@ export default {
       line-height: 20px;
       flex: 4;
     }
+    div {
+      height: 23px;
+      line-height: 13px;
+    }
     .name {
-      height: 24px;
+      // height: 24px;
       font-size: 16px;
       font-family: PingFangSC-Regular, PingFang SC;
       font-weight: 400;

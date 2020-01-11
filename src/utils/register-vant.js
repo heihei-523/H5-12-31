@@ -31,7 +31,8 @@ import {
   RadioGroup,
   Radio,
   Stepper,
-  DatetimePicker
+  DatetimePicker,
+  Uploader
 } from 'vant'
 
 Vue
@@ -67,3 +68,4 @@ Vue
   .use(RadioGroup)
   .use(Stepper)
   .use(DatetimePicker)
+  .use(Uploader)
