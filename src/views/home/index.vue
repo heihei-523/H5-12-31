@@ -33,23 +33,46 @@
         :swipe-threshold="5"
       >
         <van-tab to="/">
-          <div slot="title" @click="ball">羽毛球</div>
+          <div slot="title" @click="onBall">羽毛球</div>
         </van-tab>
         <van-tab to="/">
-          <div slot="title" @click="ball">篮球</div>
+          <div slot="title" @click="onBall">篮球</div>
         </van-tab>
         <van-tab to="/">
-          <div slot="title" @click="ball">游泳</div>
+          <div slot="title" @click="onBall">游泳</div>
         </van-tab>
         <van-tab to="/">
-          <div slot="title" @click="ball">网球</div>
+          <div slot="title" @click="onBall">网球</div>
         </van-tab>
         <van-tab to="/">
           <div slot="title" @click="onAll">全部</div>
         </van-tab>
       </van-tabs>
     </div>
-    <All v-if="show"></All>
+    <div v-if="show">
+      <div class="movement">
+        <div>
+          <img src="../../assets/gao_er_fu.png" alt />
+          <span>羽毛球</span>
+        </div>
+        <div>
+          <img src="../../assets/gao_er_fu.png" alt />
+          <span>篮球</span>
+        </div>
+        <div>
+          <img src="../../assets/gao_er_fu.png" alt />
+          <span>游泳</span>
+        </div>
+        <div>
+          <img src="../../assets/gao_er_fu.png" alt />
+          <span>网球</span>
+        </div>
+        <div>
+          <img src="../../assets/gao_er_fu.png" alt />
+          <span>乒乓球</span>
+        </div>
+      </div>
+    </div>
     <router-view></router-view>
   </div>
 </template>
@@ -68,7 +91,7 @@ export default {
   name: 'home',
   data () {
     return {
-      // active: 0,
+      active: 0,
       // barBackground: false,
       venueInfo: {}, // 场地信息
       sportName: [], // 运动名称
@@ -85,11 +108,11 @@ export default {
       this.venueInfo = res.data.venueInfo
       this.sportName = this.venueInfo.sportName.split(',')
     },
-    onAll (show) {
-      this.show = show
+    onAll () {
+      this.show = true
     },
-    onball (hide) {
-      this.show = hide
+    onBall () {
+      this.show = false
     },
     onClickLeft () {}
   }
@@ -151,5 +174,23 @@ export default {
 }
 /deep/.van-tabs__nav--card .van-tab.van-tab--active {
   background-color: #fff;
+}
+.movement {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  div {
+    height: 60px;
+    font-size: 14px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: rgba(92, 93, 102, 1);
+    line-height: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 </style>
