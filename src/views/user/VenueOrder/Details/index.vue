@@ -84,10 +84,22 @@
     </div>
     <!-- ------------------------------------------------------------------ -->
     <van-popup v-model="show" get-container="body">
-      <div class="popup">
-        <img src="#" alt />
-        <span>3/5</span>
-      </div>
+      <van-swipe @change="onChange" :width="165" :height="170" :show-indicators="indicators">
+        <van-swipe-item>
+          <img src="../../../../assets/wxming.png" alt />
+        </van-swipe-item>
+        <van-swipe-item>
+          <img src="../../../../assets/wxming.png" alt />
+        </van-swipe-item>
+        <van-swipe-item>
+          <img src="../../../../assets/wxming.png" alt />
+        </van-swipe-item>
+        <van-swipe-item>
+          <img src="../../../../assets/wxming.png" alt />
+        </van-swipe-item>
+        <!-- <div class="custom-indicator" slot="indicator">{{ current + 1 }}/4</div> -->
+      </van-swipe>
+      <div class="custom-indicator">{{ current + 1 }}/4</div>
     </van-popup>
   </div>
 </template>
@@ -96,29 +108,41 @@
 export default {
   data () {
     return {
-      show: false
+      indicators: false,
+      show: false,
+      current: 0
     }
   },
   methods: {
     OnPopup () {
       this.show = true
+    },
+    onChange (index) {
+      this.current = index
     }
   }
 }
 </script>
 
 <style lang="less" scoped>
-.popup {
-  width: 165px;
-  height: 196px;
-  background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/deep/.van-swipe {
+  padding-left: 13px;
+  padding-top: 10px;
+  width: 162px;
+  height: 170px;
   img {
     width: 150px;
     height: 150px;
   }
+}
+.custom-indicator {
+  height: 30px;
+  width: 165px;
+  font-size: 16px;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: rgba(92, 93, 102, 1);
+  text-align: center;
 }
 .top {
   display: flex;
@@ -366,7 +390,7 @@ export default {
       font-weight: 400;
       color: rgba(92, 93, 102, 1);
       line-height: 20px;
-      flex: 2;
+      flex: 4;
     }
     .del {
       width: 96px;
@@ -433,8 +457,8 @@ export default {
       .row_1-1 {
         height: 22px;
         white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
+        text-overflow: ellipsis;
+        overflow: hidden;
         font-size: 16px;
         font-family: PingFangSC-Medium, PingFang SC;
         font-weight: 500;

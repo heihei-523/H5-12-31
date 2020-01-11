@@ -21,9 +21,14 @@
           <span>充值金额</span>
         </div>
         <div class="money-active">
-          <div>¥1000</div>
-          <div class="active">¥2000</div>
-          <div>¥3000</div>
+          <!-- <div>¥1000</div> -->
+          <div
+            @click="onHighlight(moneyActive)"
+            :class="{ active:moneyActive == highlight }"
+            v-for="(moneyActive,index) in moneyActives"
+            :key="index">{{"¥" + moneyActive}}
+          </div>
+          <!-- <div>¥3000</div> -->
         </div>
       </div>
       <!-- ___________________________充值说明 -->
@@ -61,7 +66,9 @@ export default {
     return {
       cardValue: 3,
       cardCode: '2207 2449 8879 0003',
-      sumMoney: 2000.00
+      sumMoney: 2000.00,
+      moneyActives: [1000, 2000, 3000],
+      highlight: ''
     }
   },
   methods: {
@@ -70,6 +77,9 @@ export default {
     },
     onClickRight () {
       // navbar 菜单
+    },
+    onHighlight (moneyActive) {
+      this.highlight = moneyActive
     }
   }
 }
@@ -168,19 +178,17 @@ export default {
     padding: 8px 13px 0 12px;
     border-top: 1px solid #F5F6F7;
     .rule-one, .rule-two, .rule-three{
-      padding-left: 60px;
-      position: relative;
+      display: flex;
+      padding-bottom: 10px;
     }
     .rule-one :nth-child(1), .rule-two :nth-child(1), .rule-three :nth-child(1){
+      margin-right: 5px;
       height:20px;
       font-size:14px;
       font-family:PingFangSC-Regular,PingFang SC;
       font-weight:400;
       color:rgba(138,140,153,1);
       line-height:20px;
-      position: absolute;
-      left: 0;
-      top: 10px;
     }
     .rule-one :nth-child(2), .rule-two :nth-child(2), .rule-three :nth-child(2){
       height:20px;
@@ -203,6 +211,8 @@ export default {
     bottom: 0;
     left: 0;
     box-sizing: border-box;
+    display: flex;
+    align-items: center;
     padding: 5px 12px;
     .footer-one{
       font-size: 16px;
@@ -216,6 +226,8 @@ export default {
       margin-right: 120px;
     }
     .van-button{
+      text-align: center;
+      line-height: 40px;
       height: 40px;
     }
   }

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <van-nav-bar title="我的门票" fixed>
+    <van-nav-bar title="我的会员卡" fixed>
       <van-icon name="cross" slot="left" />
       <van-icon name="ellipsis" slot="right" />
     </van-nav-bar>

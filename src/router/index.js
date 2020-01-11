@@ -24,8 +24,10 @@ import Card from '../views/VenueList/cardList/card' // 会员卡列表
 import TicketsOrder from '../views/user/ticketsOrder' // 门票订单列表
 import Details from '../views/user/ticketsOrder/Details' // 门票订单详情----------二级路由
 import CommodityOrder from '../views/user/commodityOrder' // 商品订单
-import CancelPay from '../views/user/payDetails/cancelPay' // 取消场馆订单详情
-import Paid from '../views/user/payDetails/paid' // 已支付场馆订单详情
+// import CancelPay from '../views/user/payDetails/cancelPay' // 取消场馆订单详情-----------
+// import Await from '../views/user/payDetails/await' // 场馆待支付订单---------
+// import Paid from '../views/user/payDetails/paid' // 已支付场馆订单详情------
+import VenuePayDetails from '../views/user/payDetails'
 import AwaitPay from '../views/user/ticketsPay/awaitPay' // 门票待支付订单详情
 import PaidDetails from '../views/user/ticketsPay/paidDetails' // 门票已支付详情
 import CancelTicketsPay from '../views/user/ticketsPay/cancel' // 门票取消支付详情
@@ -36,7 +38,6 @@ import MyTicketsList from '../views/user/MyTickets/list' // 我的门票--------
 import MyMembershipCard from '../views/user/myMembershipCard' // 我的会员卡列表
 import VenueOrder from '../views/user/VenueOrder' // 场馆订单
 import VenueOrderList from '../views/user/VenueOrder/Details' // 场馆订单----------二级路由
-import Await from '../views/user/payDetails/await' // 场馆待支付订单
 
 Vue.use(VueRouter)
 
@@ -128,7 +129,7 @@ const routes = [
     ]
   },
   {
-    path: '/ticketsOrder',
+    path: '/ticketsOrder', // 门票订单列表
     component: TicketsOrder,
     children: [
       {
@@ -141,13 +142,21 @@ const routes = [
     path: '/commodityOrder',
     component: CommodityOrder
   },
+  // {
+  //   path: '/cancelPay', // 取消订单详情----场馆
+  //   component: CancelPay
+  // },
+  // {
+  //   path: '/Await', // 待支付
+  //   component: Await
+  // },
+  // {
+  //   path: '/paid', // 已支付付款详情----场馆
+  //   component: Paid
+  // },
   {
-    path: '/cancelPay', // 取消订单详情----场馆
-    component: CancelPay
-  },
-  {
-    path: '/paid', // 已支付付款详情----场馆
-    component: Paid
+    path: '/venuePayDetails',
+    component: VenuePayDetails
   },
   {
     path: '/awaitPay', // 等待付款详情---门票
@@ -184,7 +193,7 @@ const routes = [
     component: MyMembershipCard
   },
   {
-    path: '/venueOrder',
+    path: '/venueOrder', // 场馆订单
     component: VenueOrder,
     children: [
       {
@@ -192,10 +201,6 @@ const routes = [
         component: VenueOrderList
       }
     ]
-  },
-  {
-    path: '/Await',
-    component: Await
   }
 
 ]

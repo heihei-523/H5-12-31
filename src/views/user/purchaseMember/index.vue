@@ -8,9 +8,13 @@
     <div class="top">
       <div class="lei_xing">卡类型</div>
       <div class="lei_xing_1">
-        <div>储值卡</div>
-        <div>储次卡</div>
-        <div>期限卡</div>
+        <div
+          v-for="item in cardClass"
+          :key="item"
+          class="nohighlight"
+          :class="{highlight: active==item}"
+          @click="onHighlight(item)"
+        >{{item}}</div>
       </div>
       <div class="ka_name">卡名称</div>
       <van-radio-group v-model="radio">
@@ -52,20 +56,40 @@
 export default {
   data () {
     return {
-      radio: 1
+      radio: 1,
+      cardClass: ['储值卡', '储次卡', '期限卡'],
+      active: ''
+    }
+  },
+  methods: {
+    onHighlight (item) {
+      this.active = item
     }
   }
 }
 </script>
 
 <style lang="less" scoped>
+.nohighlight {
+  width: 100px;
+  height: 55px;
+  background: #f5f6f7;
+  border-radius: 6px;
+  border: 2px solid #e5e5e5;
+  font-size: 24px;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #5c5d66;
+  line-height: 55px;
+  text-align: center;
+}
 .app {
   background-color: #f5f6f7;
   height: 667px;
 }
 .kong {
   background-color: #fff;
-  height: 50px;
+  height: 60px;
 }
 .top {
   display: flex;
@@ -86,7 +110,7 @@ export default {
     display: flex;
     justify-content: space-around;
     margin-bottom: 17px;
-    div {
+    .highlight {
       width: 100px;
       height: 55px;
       background: rgba(188, 223, 255, 1);
@@ -95,7 +119,7 @@ export default {
       font-size: 24px;
       font-family: PingFangSC-Medium, PingFang SC;
       font-weight: 500;
-      color: rgba(92, 93, 102, 1);
+      color: rgba(24, 144, 255, 1);
       line-height: 55px;
       text-align: center;
     }
@@ -162,7 +186,7 @@ export default {
       color: rgba(138, 140, 153, 1);
       line-height: 20px;
       margin-right: 6px;
-    //   margin-top: 5px;
+      //   margin-top: 5px;
     }
     .boll {
       font-size: 14px;
