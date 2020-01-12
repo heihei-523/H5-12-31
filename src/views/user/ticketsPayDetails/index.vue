@@ -43,6 +43,11 @@
         <div class="left">合计金额</div>
         <div class="right">￥15.00</div>
       </div>
+      <div class="an_niu">
+        <div class="shi_fu">实付金额：</div>
+        <div class="jin_e">352.00</div>
+        <button>立即支付</button>
+      </div>
     </div>
     <!-- 取消付款 -->
     <div v-if="cancel">
@@ -94,6 +99,11 @@
           <div class="gobuy">支付时间：</div>
           <div class="boll">2020/10/30 23:12:01</div>
         </div>
+      </div>
+      <div class="qu_xiao_an_niu">
+        <div class="shi_fu">实付金额：</div>
+        <div class="jin_e">352.00</div>
+        <button>再次预定</button>
       </div>
     </div>
     <!-- 已付款 -->
@@ -159,11 +169,11 @@
           <div class="boll">2020/10/30 23:12:01</div>
         </div>
       </div>
-    </div>
-    <div class="an_niu">
-      <div class="shi_fu">实付金额：</div>
-      <div class="jin_e">352.00</div>
-      <button>立即支付</button>
+      <div class="qu_xiao_an_niu">
+        <div class="shi_fu">实付金额：</div>
+        <div class="jin_e">352.00</div>
+        <button>再次预定</button>
+      </div>
     </div>
   </div>
 </template>
@@ -182,6 +192,48 @@ export default {
 </script>
 
 <style lang="less" scoped>
+//取消按钮
+.qu_xiao_an_niu {
+  background-color: #fff;
+  position: fixed;
+  width: 349px;
+  height: 50px;
+  display: flex;
+  bottom: 0;
+  align-items: center;
+  padding: 0 13px;
+  .shi_fu {
+    width: 81px;
+    height: 22px;
+    font-size: 16px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: rgba(92, 93, 102, 1);
+    line-height: 22px;
+    flex: 3;
+  }
+  .jin_e {
+    width: 79px;
+    height: 25px;
+    font-size: 18px;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    color: rgba(250, 100, 0, 1);
+    line-height: 25px;
+    flex: 4;
+  }
+  button {
+    font-size: 16px;
+    background-color: #fff;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    color: #1890ff;
+    border: #1890ff solid 1px;
+    width: 114px;
+    height: 40px;
+    flex: 3;
+  }
+}
 .app {
   background-color: #f5f6f7;
   height: 667px;
@@ -192,7 +244,7 @@ export default {
   background-color: #f5f6f7;
 }
 .quxiao {
-  text-align: center;
+  text-align: right;
   flex: 4;
   height: 22px;
   font-size: 16px;
@@ -202,7 +254,7 @@ export default {
   line-height: 22px;
 }
 .yi_zhi_fu {
-  text-align: center;
+  text-align: right;
   flex: 4;
   height: 22px;
   font-size: 16px;
@@ -230,11 +282,12 @@ export default {
     img {
       width: 18px;
       height: 18px;
-      margin-top: 3px;
-      margin-right: 3px;
+      margin-top: 2px;
+      // margin-right: 3px;
+      margin-left: 22px;
     }
     .dai_zhi_fu {
-      text-align: center;
+      text-align: right;
       flex: 4;
       height: 22px;
       font-size: 16px;
