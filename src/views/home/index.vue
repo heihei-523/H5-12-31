@@ -3,7 +3,8 @@
   <div>
     <van-nav-bar title="乌兰察布体育馆" @click-left="onClickLeft">
       <van-icon name="arrow-left" slot="left" color="#5c5d66" size="21"/>
-      <van-icon name="ellipsis" slot="right" size="24"/>
+      <van-icon name="contact"  slot="right" size="21" color="#5c5d66"/>
+        <!-- <van-icon name="ellipsis"  size="24"/> -->
     </van-nav-bar>
     <div class="beiJingf">
       <span class="beiJing">

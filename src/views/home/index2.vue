@@ -4,7 +4,8 @@
     <div>
       <van-nav-bar :title="venueName" @click-left="onClickLeft" fixed>
         <van-icon name="arrow-left" slot="left" color="#5c5d66" size="21"/>
-        <van-icon name="ellipsis" slot="right" />
+        <!-- <van-icon name="ellipsis" slot="right" /> -->
+        <van-icon name="contact"  slot="right" size="21" color="#5c5d66"/>
       </van-nav-bar>
       <div>
         <div class="beiJingf">
