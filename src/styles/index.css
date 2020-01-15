@@ -12,6 +12,9 @@
   font-weight: 600;
   color: #5c5d66;
 }
+.van-nav-bar__left {
+  left: 6px;
+}
 .van-nav-bar__right .van-icon-ellipsis {
   font-size: 20px;
   font-weight: 600;

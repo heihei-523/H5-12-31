@@ -3,7 +3,7 @@
     <!-- 单馆的首页 -->
     <div>
       <van-nav-bar :title="venueName" @click-left="onClickLeft" fixed>
-        <van-icon name="cross" slot="left" />
+        <van-icon name="arrow-left" slot="left" color="#5c5d66" size="21"/>
         <van-icon name="ellipsis" slot="right" />
       </van-nav-bar>
       <div>
